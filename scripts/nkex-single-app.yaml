@@ -23,6 +23,6 @@ spec:
       parameters:
       - name: "controlPlaneEndpoint.host"
         value: 10.48.38.89
-  - repoURL: 'https://github.com/wolfganghuse/sample-kubernetes-cluster-api-argocd.git'
+  - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
     targetRevision: HEAD
     ref: values
