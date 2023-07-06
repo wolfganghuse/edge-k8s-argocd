@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: workload
+  namespace: argocd
 spec:
   generators:
   - clusters:
@@ -19,6 +20,6 @@ spec:
       source:
         repoURL: 'https://github.com/wolfganghuse/sample-kubernetes-cluster-api-argocd.git'
         path: workload
-        targetRevision: HEAD
+        targetRevision: main
       destination:
         server: '{{server}}'

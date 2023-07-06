@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: edge-k8s
+  namespace: argocd
 spec:
   goTemplate: true
   generators:
@@ -9,7 +10,7 @@ spec:
       generators:
       - git:
           repoURL: https://github.com/wolfganghuse/edge-k8s-argocd.git
-          revision: HEAD
+          revision: main
           files:
           - path: mgmt/edge-k8s-clusters.yaml
       - list:
