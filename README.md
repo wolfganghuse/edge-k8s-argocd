@@ -15,6 +15,14 @@ kubectl apply -f https://github.com/kubernetes-sigs/cluster-api-addon-provider-h
 
 # ArgoCD
 ## Install
+
+```
+helm repo add argo https://argoproj.github.io/argo-helm
+helm install argocd argo/argo-cd -n argocd --create-namespace --set server.service.type=LoadBalancer
+```
+
+or
+
 ```
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.8.0-rc1/manifests/install.yaml
@@ -54,7 +62,7 @@ Proxy:
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
-or Patch to use LoadBalancer
+or Patch to use LoadBalancer (if not used Helm)
 
 ```
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
