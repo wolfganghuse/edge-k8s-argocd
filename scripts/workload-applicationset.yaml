@@ -22,4 +22,3 @@ spec:
         targetRevision: HEAD
       destination:
         server: '{{server}}'
-        namespace: workload
