@@ -1,0 +1,8 @@
+key:
+  clusters:
+    - name: edge1
+      controlplane_ip: 10.48.38.85
+      cluster: crimson
+    - name: edge2
+      controlplane_ip: 10.48.38.89
+      cluster: crimson

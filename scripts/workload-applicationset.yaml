@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: workload
+spec:
+  generators:
+  - clusters:
+      selector:
+        matchLabels:
+          argocd.argoproj.io/secret-type: cluster
+  template:
+    metadata:
+      name: '{{name}}-workload'
+    spec:
+      syncPolicy:
+        automated:
+          prune: true
+      project: default
+      source:
+        repoURL: 'https://github.com/wolfganghuse/sample-kubernetes-cluster-api-argocd.git'
+        path: workload
+        targetRevision: HEAD
+      destination:
+        server: '{{server}}'
+        namespace: workload

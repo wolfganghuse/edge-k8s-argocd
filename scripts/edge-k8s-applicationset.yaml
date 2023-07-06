@@ -1,0 +1,48 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: edge-k8s
+spec:
+  goTemplate: true
+  generators:
+  - matrix:
+      generators:
+      - git:
+          repoURL: https://github.com/wolfganghuse/sample-kubernetes-cluster-api-argocd.git
+          revision: HEAD
+          files:
+          - path: mgmt/edge-k8s-clusters.yaml
+      - list:
+          elements: []
+          elementsYaml: "{{ .key.clusters | toJson }}"
+  template:
+    metadata:
+      name: '{{.name}}'
+    spec:
+      syncPolicy:
+        automated:
+          prune: true
+        syncOptions:
+          - CreateNamespace=true
+      project: default
+      destination:
+        name: ''
+        namespace: '{{.name}}'
+        server: 'https://kubernetes.default.svc'
+      sources:
+      - repoURL: 'git@github.com:nutanix-cloud-native/nkex-cluster.git'
+        path: .
+        targetRevision: wolf
+        helm:
+          valueFiles:
+          - $values/mgmt/edge-base-values.yaml
+          parameters:
+          - name: "controlPlaneEndpoint.host"
+            value: '{{.controlplane_ip}}'
+          - name: "mdMachine.cluster"
+            value: '{{.cluster}}'
+          - name: "kcpMachine.cluster"
+            value: '{{.cluster}}'
+      - repoURL: 'https://github.com/wolfganghuse/sample-kubernetes-cluster-api-argocd.git'
+        targetRevision: HEAD
+        ref: values

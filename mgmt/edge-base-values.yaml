@@ -1,0 +1,31 @@
+cluster:
+  kubernetesVersion: "v1.25.10"
+
+controlPlaneEndpoint:
+  host: 10.48.38.85
+
+controlplane:
+  replicas: 1
+
+nodes:
+  replicas: 1
+
+
+kcpMachine:
+  cluster: crimson
+  os: ubuntu-2204
+  subnet: phx-routed-55-IPAM
+
+mdMachine:
+  cluster: crimson
+  os: ubuntu-2204
+  subnet: phx-routed-55-IPAM
+
+machinehealthcheck: false
+
+csi:
+  snapshot: false
+  enable_csi2: false
+  enable_csi3: false
+  createSecret: false
+  storageContainer: default
