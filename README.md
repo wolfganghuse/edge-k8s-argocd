@@ -13,6 +13,16 @@ clusterctl init -i nutanix
 kubectl apply -f https://github.com/kubernetes-sigs/cluster-api-addon-provider-helm/releases/download/v0.1.0-alpha.6/addon-components.yaml
 ```
 
+# Keycloak
+
+```
+helm repo add codecentric https://codecentric.github.io/helm-charts
+
+kubectl create ns identity
+
+helm upgrade --install keycloak codecentric/keycloak --values scripts/values-keycloak.yml -n identity
+```
+
 # ArgoCD
 ## Install
 

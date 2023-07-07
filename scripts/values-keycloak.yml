@@ -1,0 +1,32 @@
+extraEnv: |
+  - name: KEYCLOAK_LOGLEVEL
+    value: DEBUG
+  - name: KEYCLOAK_USER
+    value: admin
+  - name: KEYCLOAK_PASSWORD
+    value: as897gsdfs766dfsgjhsdf
+  - name: PROXY_ADDRESS_FORWARDING
+    value: "true"
+
+args:
+  - -Dkeycloak.profile.feature.docker=enabled
+
+ingress:
+  enabled: true
+  ingressClassName: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  rules:
+    - host: sso.edge-management.dachlab.net
+      paths:
+        - path: /
+          pathType: "Prefix"
+
+  tls:
+  - hosts:
+    - sso.edge-management.dachlab.net
+    secretName: keycloak-tld-secret
+
+postgresql:
+  enabled: true
+  postgresqlPassword: asdfaso97sadfjylfasdsf78
