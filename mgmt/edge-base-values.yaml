@@ -29,6 +29,9 @@ machinehealthcheck: false
 ccm:
   enabled: false
 
+metricsServer:
+  enabled: true
+
 csi:
   snapshot: false
   enable_csi2: false
