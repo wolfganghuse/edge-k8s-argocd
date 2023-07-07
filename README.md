@@ -18,14 +18,9 @@ kubectl apply -f https://github.com/kubernetes-sigs/cluster-api-addon-provider-h
 
 ```
 helm repo add argo https://argoproj.github.io/argo-helm
-helm install argocd argo/argo-cd -n argocd --create-namespace --set server.service.type=LoadBalancer
-```
+helm install argocd argo/argo-cd -n argocd --create-namespace --set configs.params."server\.insecure"=true
 
-or
 
-```
-kubectl create namespace argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.8.0-rc1/manifests/install.yaml
 ```
 
 Edit Configmap for using Cilium Helm Chart:
@@ -57,20 +52,10 @@ Initial secret:
 kubectl get secret -n argocd argocd-initial-admin-secret  --template={{.data.password}} | base64 -D
 ```
 
-Proxy:
+Ingress:
 ```
-kubectl port-forward svc/argocd-server -n argocd 8080:443
+kubectl apply -f scripts/argocd-ingress.yaml
 ```
-
-or Patch to use LoadBalancer (if not used Helm)
-
-```
-kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
-```
-
-argocd login localhost:8080
-(or)
-https://localhost:8080/
 
 # Kyverno
 ## Install
