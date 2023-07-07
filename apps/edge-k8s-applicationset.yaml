@@ -44,6 +44,8 @@ spec:
             value: '{{.cluster}}'
           - name: "kcpMachine.cluster"
             value: '{{.cluster}}'
+          - name: "kubeVip.cloudProvider.globalRange"
+            value: '{{.globalRange}}'          
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
-        targetRevision: HEAD
+        targetRevision: crimson-small-scale
         ref: values

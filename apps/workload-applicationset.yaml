@@ -20,6 +20,6 @@ spec:
       source:
         repoURL: 'https://github.com/wolfganghuse/sample-kubernetes-cluster-api-argocd.git'
         path: workload
-        targetRevision: main
+        targetRevision: crimson-small-scale
       destination:
         server: '{{server}}'

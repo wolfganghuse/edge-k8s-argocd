@@ -10,6 +10,9 @@ controlplane:
 nodes:
   replicas: 1
 
+kubeVip:
+  cloudProvider:
+    enabled: true
 
 kcpMachine:
   cluster: crimson
