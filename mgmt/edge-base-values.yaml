@@ -8,7 +8,7 @@ controlplane:
   replicas: 1
 
 nodes:
-  replicas: 2
+  replicas: 1
 
 kubeVip:
   cloudProvider:
