@@ -40,3 +40,6 @@ spec:
   containers:
   - name: cpu-demo-ctr
     image: quay.io/heetch/stress
+    args:
+    - -cpus
+    - "2"
