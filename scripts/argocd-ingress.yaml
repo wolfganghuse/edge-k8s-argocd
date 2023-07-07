@@ -4,12 +4,11 @@ metadata:
   name: argocd-server-ingress
   namespace: argocd
   annotations:
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: "nginx"
   rules:
-  - host: argocd.dachlab.net
+  - host: argocd.edge-management.dachlab.net
     http:
       paths:
       - path: /
@@ -19,3 +18,7 @@ spec:
             name: argocd-server
             port:
               name: https
+  tls:
+  - hosts:
+    - argocd.edge-management.dachlab.net
+    secretName: argocd-tld-secret
