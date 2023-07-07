@@ -30,3 +30,13 @@ spec:
         cpu: 100m
         memory: 128Mi
       type: Container
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cpu-demo
+  namespace: demo
+spec:
+  containers:
+  - name: cpu-demo-ctr
+    image: quay.io/heetch/stress
