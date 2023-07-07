@@ -20,22 +20,10 @@ key:
       controlplane_ip: 10.48.38.51
       cluster: crimson
       globalRange: 10.48.38.52/32
-    - name: edge6
-      controlplane_ip: 10.48.38.53
-      cluster: crimson
-      globalRange: 10.48.38.54/32
     - name: edge7
       controlplane_ip: 10.48.38.55
       cluster: crimson
       globalRange: 10.48.38.56/32
-    - name: edge8
-      controlplane_ip: 10.48.38.57
-      cluster: crimson
-      globalRange: 10.48.38.58/32
-    - name: edge9
-      controlplane_ip: 10.48.38.59
-      cluster: crimson
-      globalRange: 10.48.38.60/32
     - name: edge10
       controlplane_ip: 10.48.38.61
       cluster: crimson
