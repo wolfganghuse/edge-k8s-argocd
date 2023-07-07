@@ -41,5 +41,5 @@ spec:
   - name: cpu-demo-ctr
     image: quay.io/heetch/stress
     args:
-    - --cpus
+    - --cpu
     - "2"
