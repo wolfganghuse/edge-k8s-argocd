@@ -23,6 +23,9 @@ mdMachine:
 
 machinehealthcheck: false
 
+ccm:
+  enabled: false
+  
 csi:
   snapshot: false
   enable_csi2: false
