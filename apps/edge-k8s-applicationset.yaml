@@ -10,7 +10,7 @@ spec:
       generators:
       - git:
           repoURL: https://github.com/wolfganghuse/edge-k8s-argocd.git
-          revision: main
+          revision: crimson-small-scale
           files:
           - path: mgmt/edge-k8s-clusters.yaml
       - list:
@@ -44,6 +44,8 @@ spec:
             value: '{{.cluster}}'
           - name: "kcpMachine.cluster"
             value: '{{.cluster}}'
+          - name: "kubeVip.cloudProvider.globalRange"
+            value: '{{.globalRange}}'          
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
-        targetRevision: HEAD
+        targetRevision: crimson-small-scale
         ref: values
