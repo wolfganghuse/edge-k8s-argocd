@@ -1,6 +1,6 @@
 key:
   clusters:
-    - name: edge01-0707
+    - name: edge01-1007
       controlplane_ip: 10.48.38.43
       cluster: crimson
       globalRange: 10.48.38.44/32
