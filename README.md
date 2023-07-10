@@ -10,7 +10,7 @@ clusterctl init -i nutanix
 
 ## CAAPH
 ```
-kubectl apply -f https://github.com/kubernetes-sigs/cluster-api-addon-provider-helm/releases/download/v0.1.0-alpha.6/addon-components.yaml
+kubectl apply -f https://github.com/kubernetes-sigs/cluster-api-addon-provider-helm/releases/download/v0.1.0-alpha.7/addon-components.yaml
 ```
 
 # ArgoCD
