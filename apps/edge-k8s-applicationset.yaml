@@ -45,7 +45,9 @@ spec:
           - name: "kcpMachine.cluster"
             value: '{{.cluster}}'
           - name: "kubeVip.cloudProvider.globalRange"
-            value: '{{.globalRange}}'          
+            value: '{{.globalRange}}'    
+          - name: "prismCentral.password"
+            value: '$NUTANIX_PASSWORD'      
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
         targetRevision: crimson-small-scale
         ref: values
