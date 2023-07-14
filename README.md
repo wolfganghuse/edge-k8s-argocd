@@ -13,6 +13,69 @@ clusterctl init -i nutanix
 kubectl apply -f https://github.com/kubernetes-sigs/cluster-api-addon-provider-helm/releases/download/v0.1.0-alpha.7/addon-components.yaml
 ```
 
+# Vault
+
+```
+helm repo add hashicorp https://helm.releases.hashicorp.com
+helm install -f scripts/vault-values.yaml vault hashicorp/vault -n vault --create-namespace
+```
+
+Unseal the store:
+
+```
+kubectl exec -n vault vault-0 -- vault operator init \
+    -key-shares=1 \
+    -key-threshold=1 \
+    -format=json > ./cluster-keys.json
+
+VAULT_UNSEAL_KEY=$(jq -r ".unseal_keys_b64[]" ./cluster-keys.json)
+kubectl exec -n vault vault-0 -- vault operator unseal $VAULT_UNSEAL_KEY
+```
+
+Export Root Token and Login
+
+```
+export CLUSTER_ROOT_TOKEN=$(cat ./cluster-keys.json | jq -r ".root_token")
+kubectl exec -n vault vault-0 -- vault login $CLUSTER_ROOT_TOKEN
+```
+
+Interactive Vault Shell
+
+```
+kubectl exec -n vault -it vault-0 -- /bin/sh
+``` 
+
+## Prepare Vault for ESO
+
+```
+vault secrets enable --path=secret kv-v2
+
+vault policy write demo-policy -<<EOF     
+path "secret/data/*" {
+  capabilities = ["create", "update", "read"]
+}
+path "secret/metadata/*"
+{
+  capabilities = [ "list", "read" ]
+}
+
+vault kv put secret/demo_secrets tokenA=too_many_secrets tokenB=not_enough_secrets
+
+vault token create --policy=demo-policy
+```
+
+# External Secrets Operator (ESO)
+
+```
+helm repo add external-secrets https://charts.external-secrets.io
+
+helm install external-secrets \
+   external-secrets/external-secrets \
+  -n external-secrets \
+  --create-namespace \
+  --set installCRDs=true
+```
+
 # ArgoCD
 ## Install
 

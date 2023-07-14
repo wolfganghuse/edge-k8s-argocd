@@ -1,0 +1,13 @@
+server:
+  ingress:
+    enabled: true
+    annotations: {
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+    }
+    ingressClassName: nginx
+    hosts:
+      - host: vault.edge-management.dachlab.net
+    tls:
+    - hosts:
+        - vault.edge-management.dachlab.net
+      secretName: vault-tld-secret
