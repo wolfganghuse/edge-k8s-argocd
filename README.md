@@ -81,8 +81,7 @@ helm install external-secrets \
 
 ```
 helm repo add argo https://argoproj.github.io/argo-helm
-helm install argocd argo/argo-cd -n argocd --create-namespace --set configs.params."server\.insecure"=true
-
+helm install argocd argo/argo-cd -n argocd -f scripts/argo-values.yaml
 
 ```
 
