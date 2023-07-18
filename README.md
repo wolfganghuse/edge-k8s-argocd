@@ -108,6 +108,11 @@ Argo needs privileges to create CAPI Clusters
 kubectl create clusterrolebinding argocd-application-controller-cluster-admin-binding --clusterrole=cluster-admin --serviceaccount=argocd:argocd-application-controller
 ```
 
+Create Token for API-Access (needed later on Capi2Argo Operator)
+```
+argocd account generate-token --account secretoperator
+```
+
 ## GUI/CLI Access
 Initial secret:
 ```
