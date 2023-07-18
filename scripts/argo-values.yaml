@@ -1,0 +1,18 @@
+configs:
+  cm:
+    accounts.secretoperator: apiKey
+  params:
+    server.insecure: true
+server:
+  ingress:
+    enabled: true
+    annotations: {
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+    }
+    ingressClassName: nginx
+    hosts:
+      - argocd.edge-management.dachlab.net
+    tls:
+    - hosts:
+        - argocd.edge-management.dachlab.net
+      secretName: argocd-tld-secret
