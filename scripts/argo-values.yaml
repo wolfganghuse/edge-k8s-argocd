@@ -3,6 +3,16 @@ configs:
     accounts.secretoperator: apiKey
   params:
     server.insecure: true
+  rbac:
+    policy.csv: |
+      p, role:apioperator, clusters, list, *, allow
+      p, role:apioperator, clusters, get, *, allow
+      p, role:apioperator, clusters, update, *, allow      
+      p, role:apioperator, clusters, watch, *, allow
+      p, role:apioperator, clusters, create, *, allow
+      p, role:apioperator, clusters, delete, *, allow
+      p, role:apioperator, clusters, patch, *, allow
+      g, secretoperator, role:apioperator
 server:
   ingress:
     enabled: true
