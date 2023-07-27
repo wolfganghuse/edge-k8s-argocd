@@ -9,7 +9,7 @@ prismCentral:
   address: crimson-pc.dachlab.net
   insecure: false
   port: 9440
-  username: admin
+  username: automation
 
 controlplane:
   replicas: 1
