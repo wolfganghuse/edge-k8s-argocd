@@ -22,7 +22,7 @@ spec:
     spec:
       syncPolicy:
         automated:
-          prune: true
+          prune: false
         syncOptions:
           - CreateNamespace=true
       project: default
