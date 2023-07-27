@@ -34,7 +34,13 @@ mdMachine:
 machinehealthcheck: false
 
 ccm:
-  enabled: false
+  enabled: true
+  replicas: 1
+  enableCustomLabeling: false
+  #image:
+  #  {}
+    # repository: ""
+    # tag: ""
 
 metricsServer:
   enabled: false
