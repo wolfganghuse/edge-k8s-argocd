@@ -5,7 +5,7 @@ controlPlaneEndpoint:
   host: 10.48.38.85
 
 prismCentral:
-  inject: true
+  inject: false
   address: crimson-pc.dachlab.net
   insecure: false
   port: 9440
