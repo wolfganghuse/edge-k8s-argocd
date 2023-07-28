@@ -12,10 +12,10 @@ prismCentral:
   username: admin
 
 controlplane:
-  replicas: 1
+  replicas: 3
 
 nodes:
-  replicas: 1
+  replicas: 2
 
 kubeVip:
   cloudProvider:
