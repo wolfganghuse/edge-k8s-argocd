@@ -4,13 +4,14 @@
 # Configure CAPX
 https://opendocs.nutanix.com/capx/v1.2.x/getting_started/
 
+Please use clusterctl v1.5+
 ```
 clusterctl init -i nutanix
 ```
 
-## CAAPH
+Add CAAPH Addon
 ```
-kubectl apply -f https://github.com/kubernetes-sigs/cluster-api-addon-provider-helm/releases/download/v0.1.0-alpha.7/addon-components.yaml
+clusterctl init --addon helm
 ```
 
 # Vault
