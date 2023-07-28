@@ -45,7 +45,7 @@ metricsServer:
   enabled: false
 
 csi:
-  snapshot: false
+  snapshot: true
   enable_csi2: false
   enable_csi3: true
   createSecret: true
