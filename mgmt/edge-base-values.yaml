@@ -50,3 +50,6 @@ csi:
   enable_csi3: true
   createSecret: true
   storageContainer: k8s
+  dynamicFileClass: true
+  dynamicFileClassName: nutanix-dynamicfile
+  fileServerName: crimson-fs
