@@ -3,6 +3,7 @@ cluster:
 
 prismCentral:
   inject: true
+  address: crimson-pc.dachlab.net
   insecure: false
   port: 9440
   username: admin
