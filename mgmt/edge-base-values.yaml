@@ -31,6 +31,8 @@ ccm:
   replicas: 1
   enableCustomLabeling: false
 
+  enabled: false
+
 metricsServer:
   enabled: false
 
