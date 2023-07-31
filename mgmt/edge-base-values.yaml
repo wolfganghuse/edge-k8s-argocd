@@ -2,8 +2,7 @@ cluster:
   kubernetesVersion: "v1.25.10"
 
 prismCentral:
-  inject: false
-  address: crimson-pc.dachlab.net
+  inject: true
   insecure: false
   port: 9440
   username: admin

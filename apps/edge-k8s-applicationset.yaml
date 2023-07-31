@@ -55,12 +55,12 @@ spec:
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
         targetRevision: env-littlelab1
         ref: values
-      - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
-        path: common-helm-charts/external-secrets
-        targetRevision: main
-        helm:
-          parameters:
-          - name: "cluster.name"
-            value: '{{.name}}'
-          - name: "credentialsecret.key"
-            value: 'secret/data/prismcentral/{{.prismcentral}}'
+#      - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
+#        path: common-helm-charts/external-secrets
+#        targetRevision: main
+#        helm:
+#          parameters:
+#          - name: "cluster.name"
+#            value: '{{.name}}'
+#          - name: "credentialsecret.key"
+#            value: 'secret/data/prismcentral/{{.prismcentral}}'
