@@ -1,5 +1,5 @@
 cluster:
-  kubernetesVersion: "v1.25.10"
+  kubernetesVersion: "v1.25.12"
 
 controlPlaneEndpoint:
   host: 10.48.38.85
