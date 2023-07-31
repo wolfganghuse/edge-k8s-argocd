@@ -30,13 +30,11 @@ spec:
         name: ''
         namespace: '{{.name}}'
         server: 'https://kubernetes.default.svc'
-      sources:
-      - repoURL: 'git@github.com:nutanix-cloud-native/nkex-cluster.git'
+      source:
+        repoURL: 'git@github.com:nutanix-cloud-native/nkex-cluster.git'
         path: .
         targetRevision: main
         helm:
-          valueFiles:
-          - $values/mgmt/edge-base-values.yaml
           parameters:
           - name: "controlPlaneEndpoint.host"
             value: '{{.controlplane_ip}}'
@@ -52,15 +50,9 @@ spec:
             value: '$NUTANIX_PASSWORD'      
           - name: "prismCentral.address"
             value: '{{.prismcentral}}'      
-      - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
-        targetRevision: env-littlelab1
-        ref: values
-#      - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
-#        path: common-helm-charts/external-secrets
-#        targetRevision: main
-#        helm:
-#          parameters:
-#          - name: "cluster.name"
-#            value: '{{.name}}'
-#          - name: "credentialsecret.key"
-#            value: 'secret/data/prismcentral/{{.prismcentral}}'
+          - name: "prismCentral.inject"
+            value: true
+          - name: "kcpMachine.os"
+            value: "ubuntu-2204"
+          - name: "mdMachine.os"
+            value: "ubuntu-2204"
