@@ -53,3 +53,10 @@ spec:
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
         targetRevision: littlelab1
         ref: values
+      - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
+        path: common-helm-charts
+        targetRevision: common-helm
+        helm:
+          parameters:
+          - name: "cluster.name"
+            value: '{{.cluster}}'
