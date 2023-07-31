@@ -10,7 +10,7 @@ spec:
       generators:
       - git:
           repoURL: https://github.com/wolfganghuse/edge-k8s-argocd.git
-          revision: littlelab1
+          revision: env-littlelab1
           files:
           - path: mgmt/edge-k8s-clusters.yaml
       - list:
@@ -53,7 +53,7 @@ spec:
           - name: "prismCentral.address"
             value: '{{.prismcentral}}'      
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
-        targetRevision: main
+        targetRevision: env-littlelab1
         ref: values
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
         path: common-helm-charts/external-secrets
