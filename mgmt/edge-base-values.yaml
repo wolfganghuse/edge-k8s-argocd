@@ -1,8 +1,6 @@
 cluster:
   kubernetesVersion: "v1.25.12"
 
-controlPlaneEndpoint:
-
 prismCentral:
   inject: false
   address: pc.littlelab1.dachlab.net
