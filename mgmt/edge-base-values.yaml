@@ -37,8 +37,8 @@ metricsServer:
   enabled: false
 
 csi:
-  snapshot: true
+  snapshot: false
   enable_csi2: false
-  enable_csi3: true
-  createSecret: true
+  enable_csi3: false
+  createSecret: false
   storageContainer: k8s
