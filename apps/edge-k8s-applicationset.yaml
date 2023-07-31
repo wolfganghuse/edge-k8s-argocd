@@ -50,6 +50,8 @@ spec:
             value: '{{.subnet}}'
           - name: "prismCentral.password"
             value: '$NUTANIX_PASSWORD'      
+          - name: "prismCentral.address"
+            value: '{{.prismcentral}}'      
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
         targetRevision: main
         ref: values
