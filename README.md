@@ -86,6 +86,7 @@ helm install argocd argo/argo-cd -n argocd -f scripts/argo-values.yaml
 
 ```
 
+
 Edit Configmap for using Cilium Helm Chart:
 ```
 kubectl edit configmap argocd-cm -n argocd
@@ -113,6 +114,7 @@ Create Token for API-Access (needed later on Capi2Argo Operator)
 ```
 argocd account generate-token --account secretoperator
 ```
+
 
 ## GUI/CLI Access
 Initial secret:
