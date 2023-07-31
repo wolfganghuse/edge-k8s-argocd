@@ -5,14 +5,14 @@ controlPlaneEndpoint:
   host: 10.48.38.85
 
 prismCentral:
-  inject: false
+  inject: true
   address: crimson-pc.dachlab.net
   insecure: false
   port: 9440
   username: admin
 
 controlplane:
-  replicas: 3
+  replicas: 1
 
 nodes:
   replicas: 2
