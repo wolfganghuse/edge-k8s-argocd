@@ -2,7 +2,7 @@ cluster:
   kubernetesVersion: "v1.25.12"
 
 prismCentral:
-  inject: true
+  inject: false
   address: pc.littlelab1.dachlab.net
   insecure: false
   port: 9440
