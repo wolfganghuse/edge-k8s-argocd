@@ -2,14 +2,14 @@ cluster:
   kubernetesVersion: "v1.25.12"
 
 prismCentral:
-  inject: false
+  inject: true
   address: pc.littlelab1.dachlab.net
   insecure: false
   port: 9440
   username: admin
 
 controlplane:
-  replicas: 3
+  replicas: 1
 
 nodes:
   replicas: 2
