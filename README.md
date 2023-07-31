@@ -86,7 +86,6 @@ helm install argocd argo/argo-cd -n argocd -f scripts/argo-values.yaml
 
 ```
 
-
 Edit Configmap for using Cilium Helm Chart:
 ```
 kubectl edit configmap argocd-cm -n argocd
