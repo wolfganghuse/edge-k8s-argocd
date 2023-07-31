@@ -1,15 +1,8 @@
 cluster:
-  kubernetesVersion: "v1.25.12"
+  kubernetesVersion: "v1.25.10"
 
 prismCentral:
   inject: false
-  address: pc.littlelab1.dachlab.net
-  insecure: false
-  port: 9440
-  username: admin
-
-prismCentral:
-  inject: true
   address: crimson-pc.dachlab.net
   insecure: false
   port: 9440
@@ -19,7 +12,7 @@ controlplane:
   replicas: 1
 
 nodes:
-  replicas: 2
+  replicas: 1
 
 kubeVip:
   cloudProvider:
@@ -42,7 +35,7 @@ metricsServer:
   enabled: false
 
 csi:
-  snapshot: true
+  snapshot: false
   enable_csi2: false
   enable_csi3: false
   createSecret: false
