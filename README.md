@@ -4,13 +4,77 @@
 # Configure CAPX
 https://opendocs.nutanix.com/capx/v1.2.x/getting_started/
 
+Please use clusterctl v1.5+
 ```
 clusterctl init -i nutanix
 ```
 
-## CAAPH
+Add CAAPH Addon
 ```
-kubectl apply -f https://github.com/kubernetes-sigs/cluster-api-addon-provider-helm/releases/download/v0.1.0-alpha.6/addon-components.yaml
+clusterctl init --addon helm
+```
+
+# Vault
+
+```
+helm repo add hashicorp https://helm.releases.hashicorp.com
+helm install -f scripts/vault-values.yaml vault hashicorp/vault -n vault --create-namespace
+```
+
+Unseal the store:
+
+```
+kubectl exec -n vault vault-0 -- vault operator init \
+    -key-shares=1 \
+    -key-threshold=1 \
+    -format=json > ./cluster-keys.json
+
+VAULT_UNSEAL_KEY=$(jq -r ".unseal_keys_b64[]" ./cluster-keys.json)
+kubectl exec -n vault vault-0 -- vault operator unseal $VAULT_UNSEAL_KEY
+```
+
+Export Root Token and Login
+
+```
+export CLUSTER_ROOT_TOKEN=$(cat ./cluster-keys.json | jq -r ".root_token")
+kubectl exec -n vault vault-0 -- vault login $CLUSTER_ROOT_TOKEN
+```
+
+Interactive Vault Shell
+
+```
+kubectl exec -n vault -it vault-0 -- /bin/sh
+``` 
+
+## Prepare Vault for ESO
+
+```
+vault secrets enable --path=secret kv-v2
+
+vault policy write demo-policy -<<EOF     
+path "secret/data/*" {
+  capabilities = ["create", "update", "read"]
+}
+path "secret/metadata/*"
+{
+  capabilities = [ "list", "read" ]
+}
+
+vault kv put secret/demo_secrets tokenA=too_many_secrets tokenB=not_enough_secrets
+
+vault token create --policy=demo-policy
+```
+
+# External Secrets Operator (ESO)
+
+```
+helm repo add external-secrets https://charts.external-secrets.io
+
+helm install external-secrets \
+   external-secrets/external-secrets \
+  -n external-secrets \
+  --create-namespace \
+  --set installCRDs=true
 ```
 
 # ArgoCD
@@ -18,10 +82,10 @@ kubectl apply -f https://github.com/kubernetes-sigs/cluster-api-addon-provider-h
 
 ```
 helm repo add argo https://argoproj.github.io/argo-helm
-helm install argocd argo/argo-cd -n argocd --create-namespace --set configs.params."server\.insecure"=true
-
+helm install argocd argo/argo-cd -n argocd -f scripts/argo-values.yaml
 
 ```
+
 
 Edit Configmap for using Cilium Helm Chart:
 ```
@@ -45,6 +109,12 @@ Argo needs privileges to create CAPI Clusters
 ```
 kubectl create clusterrolebinding argocd-application-controller-cluster-admin-binding --clusterrole=cluster-admin --serviceaccount=argocd:argocd-application-controller
 ```
+
+Create Token for API-Access (needed later on Capi2Argo Operator)
+```
+argocd account generate-token --account secretoperator
+```
+
 
 ## GUI/CLI Access
 Initial secret:

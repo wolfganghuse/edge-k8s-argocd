@@ -60,3 +60,4 @@ spec:
           parameters:
           - name: "cluster.name"
             value: '{{.name}}'
+
