@@ -32,9 +32,6 @@ ccm:
   enabled: true
   replicas: 1
   enableCustomLabeling: false
-  image:
-    repository: quay.io/wolfgangntnx/nutanix-cloud-controller-manager
-    tag: latest
 
 metricsServer:
   enabled: false
