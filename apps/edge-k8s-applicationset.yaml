@@ -59,4 +59,4 @@ spec:
         helm:
           parameters:
           - name: "cluster.name"
-            value: '{{.cluster}}'
+            value: '{{.name}}'
