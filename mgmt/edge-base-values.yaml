@@ -8,6 +8,13 @@ prismCentral:
   port: 9440
   username: admin
 
+prismCentral:
+  inject: true
+  address: crimson-pc.dachlab.net
+  insecure: false
+  port: 9440
+  username: admin
+
 controlplane:
   replicas: 1
 
@@ -31,13 +38,11 @@ ccm:
   replicas: 1
   enableCustomLabeling: false
 
-  enabled: false
-
 metricsServer:
   enabled: false
 
 csi:
-  snapshot: false
+  snapshot: true
   enable_csi2: false
   enable_csi3: false
   createSecret: false
