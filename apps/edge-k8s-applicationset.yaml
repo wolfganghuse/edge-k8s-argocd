@@ -52,6 +52,8 @@ spec:
             value: '{{.prismcentral}}'      
           - name: "prismCentral.inject"
             value: "true"
+          - name: "prismCentral.insecure"
+            value: "true"
           - name: "kcpMachine.os"
             value: "ubuntu-2204"
           - name: "mdMachine.os"
@@ -62,3 +64,5 @@ spec:
             value: "false"
           - name: "csi.enable_csi2"
             value: "false"
+          - name:  "controlplane.replicas" 
+            value: "1"
