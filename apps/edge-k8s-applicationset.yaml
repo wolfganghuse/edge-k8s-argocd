@@ -51,7 +51,7 @@ spec:
           - name: "prismCentral.address"
             value: '{{.prismcentral}}'      
           - name: "prismCentral.inject"
-            value: true
+            value: "true"
           - name: "kcpMachine.os"
             value: "ubuntu-2204"
           - name: "mdMachine.os"
