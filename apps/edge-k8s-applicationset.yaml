@@ -10,7 +10,7 @@ spec:
       generators:
       - git:
           repoURL: https://github.com/wolfganghuse/edge-k8s-argocd.git
-          revision: crimson-small-scale
+          revision: littlelab1
           files:
           - path: mgmt/edge-k8s-clusters.yaml
       - list:
@@ -44,10 +44,12 @@ spec:
             value: '{{.cluster}}'
           - name: "kcpMachine.cluster"
             value: '{{.cluster}}'
-          - name: "kubeVip.cloudProvider.globalRange"
-            value: '{{.globalRange}}'    
+          - name: "mdMachine.subnet"
+            value: '{{.subnet}}'
+          - name: "kcpMachine.subnet"
+            value: '{{.subnet}}'
           - name: "prismCentral.password"
             value: '$NUTANIX_PASSWORD'      
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
-        targetRevision: crimson-small-scale
+        targetRevision: littlelab1
         ref: values

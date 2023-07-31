@@ -1,12 +1,11 @@
 cluster:
-  kubernetesVersion: "v1.25.10"
+  kubernetesVersion: "v1.25.12"
 
 controlPlaneEndpoint:
-  host: 10.48.38.85
 
 prismCentral:
   inject: false
-  address: crimson-pc.dachlab.net
+  address: pc.littlelab1.dachlab.net
   insecure: false
   port: 9440
   username: admin
@@ -22,14 +21,10 @@ kubeVip:
     enabled: false
 
 kcpMachine:
-  cluster: crimson
   os: ubuntu-2204
-  subnet: phx-routed-55-IPAM
 
 mdMachine:
-  cluster: crimson
   os: ubuntu-2204
-  subnet: phx-routed-55-IPAM
 
 machinehealthcheck: false
 

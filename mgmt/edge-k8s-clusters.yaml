@@ -1,6 +1,18 @@
 key:
   clusters:
-    - name: edge01-1207-1
-      controlplane_ip: 10.48.38.43
-      cluster: crimson
-      globalRange: 10.48.38.44/32
+    - name: cluster1-prod
+      controlplane_ip: 10.50.28.11
+      cluster: cluster1
+      subnet: vlan.145-cluster1
+    - name: cluster1-dev
+      controlplane_ip: 10.50.28.12
+      cluster: cluster1
+      subnet: vlan.145-cluster1
+    - name: cluster2-prod
+      controlplane_ip: 10.50.28.231
+      cluster: cluster2
+      subnet: vlan.145-cluster2
+    - name: cluster2-dev
+      controlplane_ip: 10.50.28.232
+      cluster: cluster2
+      subnet: vlan.145-cluster2
