@@ -22,7 +22,7 @@ spec:
     spec:
       syncPolicy:
         automated:
-          prune: false
+          prune: true
         syncOptions:
           - CreateNamespace=true
       project: default
@@ -49,7 +49,7 @@ spec:
           - name: "kcpMachine.subnet"
             value: '{{.subnet}}'
           - name: "prismCentral.password"
-            value: '$NUTANIX_PASSWORD'      
+            value: '$NUTANIX_PASSWORD'     
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
         targetRevision: littlelab1
         ref: values
