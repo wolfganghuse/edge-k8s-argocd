@@ -1,0 +1,9 @@
+secretStore:
+  name: vault-backend
+  kind: ClusterSecretStore
+
+credentialsecret:
+  key: secret/data/littlelab1/prismcentral
+
+cluster:
+  name: cluster1
