@@ -55,7 +55,7 @@ spec:
         ref: values
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
         path: common-helm-charts/external-secrets
-        targetRevision: common-helm
+        targetRevision: main
         helm:
           parameters:
           - name: "cluster.name"
