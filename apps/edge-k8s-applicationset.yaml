@@ -50,8 +50,10 @@ spec:
             value: '{{.subnet}}'
           - name: "prismCentral.password"
             value: '$NUTANIX_PASSWORD'      
+          - name: "prismCentral.address"
+            value: '{{.prismcentral}}'      
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
-        targetRevision: littlelab1
+        targetRevision: main
         ref: values
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
         path: common-helm-charts/external-secrets
@@ -60,3 +62,5 @@ spec:
           parameters:
           - name: "cluster.name"
             value: '{{.name}}'
+          - name: "credentialsecret.key"
+            value: 'secret/data/prismcentral/{{.prismcentral}}'

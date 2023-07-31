@@ -3,4 +3,5 @@ key:
     - name: crimson-dev
       controlplane_ip: 10.48.38.43
       cluster: crimson
+      prismcentral: crimson-pc
       subnet: phx-routed-55-IPAM
