@@ -40,7 +40,7 @@ spec:
             - name: HELM_VALUES
               value: |
                 cluster:
-                  kubernetesVersion: "v1.25.10"
+                  kubernetesVersion: "v1.25.12"
                 prismCentral:
                   inject: true
                   address: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
