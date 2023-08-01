@@ -113,6 +113,13 @@ data:
         - "*"
 ```
 
+## Argocd Vault Plugin
+
+create Secret
+kubectl create -f scripts/argocd-vault-plugin-credentials.yaml
+kubectl apply -f scripts/argocd-vault-plugin-cmp.yaml
+
+
 ## RBAC
 Argo needs privileges to create CAPI Clusters
 
