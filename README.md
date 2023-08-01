@@ -78,6 +78,16 @@ helm install external-secrets \
   --set installCRDs=true
 ```
 
+Enable vault backend
+```
+kubectl apply -f scripts/clustersecretstore.yaml
+```
+
+Add previously created token
+```
+kubectl create secret generic vault-token -n external-secrets --from-literal=token=MY_TOKEN
+```
+
 # ArgoCD
 ## Install
 
