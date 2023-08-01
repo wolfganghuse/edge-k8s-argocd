@@ -40,7 +40,7 @@ spec:
             - name: HELM_VALUES
               value: |
                 cluster:
-                  kubernetesVersion: "v1.26.7"
+                  kubernetesVersion: "v1.25.12"
                 prismCentral:
                   inject: true
                   address: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
@@ -57,9 +57,9 @@ spec:
                 controlPlaneEndpoint:
                   host: '{{.controlplane_ip}}'
                 controlplane:
-                  replicas: 3
+                  replicas: 1
                 nodes:
-                  replicas: 2
+                  replicas: 1
                 kubeVip:
                   cloudProvider:
                     enabled: false
