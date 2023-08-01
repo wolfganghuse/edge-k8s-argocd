@@ -59,8 +59,9 @@ path "secret/metadata/*"
 {
   capabilities = [ "list", "read" ]
 }
+EOF
 
-vault kv put secret/demo_secrets tokenA=too_many_secrets tokenB=not_enough_secrets
+vault kv put secret/prismcentral/crimson-pc endpoint=crimson-pc.dachlab.net user=admin pass=ChangeMe
 
 vault token create --policy=demo-policy
 ```
