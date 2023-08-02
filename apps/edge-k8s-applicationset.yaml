@@ -57,11 +57,11 @@ spec:
                 nodes:
                   replicas: 1
                 kcpMachine:
-                  os: ubuntu-2204
+                  os: rockylinux-9
                   subnet: '{{.subnet}}'
                   cluster: '{{.cluster}}'
                 mdMachine:
-                  os: ubuntu-2204
+                  os: rockylinux-9
                   cluster: '{{.cluster}}'
                   subnet: '{{.subnet}}'
                 csi:
