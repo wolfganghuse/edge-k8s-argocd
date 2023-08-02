@@ -1,10 +1,5 @@
 key:
   clusters:
-    - name: crimson-dev
-      controlplane_ip: 10.48.38.43
-      cluster: crimson
-      prismcentral: crimson-pc
-      subnet: phx-routed-55-IPAM
     - name: littlelab1-prod
       controlplane_ip: 10.50.28.12
       cluster: cluster1
