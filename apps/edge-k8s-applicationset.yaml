@@ -33,7 +33,7 @@ spec:
       source:
         repoURL: 'git@github.com:nutanix-cloud-native/nkex-cluster.git'
         path: .
-        targetRevision: main
+        targetRevision: cilium-1.14
         plugin:
           name: argocd-vault-plugin-helm
           env:
@@ -44,14 +44,10 @@ spec:
                 prismCentral:
                   inject: true
                   address: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
-                  insecure: false
-                  port: 9440
                   username: <path:secret/data/prismcentral/{{.prismcentral}}#user>
                   password: <path:secret/data/prismcentral/{{.prismcentral}}#pass>
                 primElement:
                   address: <path:secret/data/prismelement/{{.cluster}}#endpoint>
-                  insecure: false
-                  port: 9440
                   username: <path:secret/data/prismelement/{{.cluster}}#user>
                   password: <path:secret/data/prismelement/{{.cluster}}#pass>
                 controlPlaneEndpoint:
@@ -60,9 +56,6 @@ spec:
                   replicas: 1
                 nodes:
                   replicas: 1
-                kubeVip:
-                  cloudProvider:
-                    enabled: false
                 kcpMachine:
                   os: ubuntu-2204
                   subnet: '{{.subnet}}'
@@ -71,16 +64,6 @@ spec:
                   os: ubuntu-2204
                   cluster: '{{.cluster}}'
                   subnet: '{{.subnet}}'
-                  machinehealthcheck: false
-                ccm:
-                  enabled: true
-                  replicas: 1
-                  enableCustomLabeling: false
-                metricsServer:
-                  enabled: false
                 csi:
-                  snapshot: true
-                  enable_csi2: true
-                  enable_csi3: false
-                  createSecret: true
                   storageContainer: k8s
+                privateRepo:  oci://harbor.eng.nutanix.com/cloud-native/helm
