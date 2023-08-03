@@ -5,13 +5,13 @@ key:
     #   cluster: cluster1
     #   prismcentral: littlelab1
     #   subnet: vlan.145-cluster1
-    - name: littlelab1-dev
-      controlplane_ip: 10.50.28.245
-      cluster: cluster2
-      prismcentral: littlelab1
-      subnet: vlan.145-cluster2
-    # - name: crimson-dev
-    #   controlplane_ip: 10.48.38.43
-    #   cluster: crimson
-    #   prismcentral: crimson-pc
-    #   subnet: phx-routed-55-IPAM
+    # - name: littlelab1-dev
+    #   controlplane_ip: 10.50.28.245
+    #   cluster: cluster2
+    #   prismcentral: littlelab1
+    #   subnet: vlan.145-cluster2
+    - name: crimson-dev
+      controlplane_ip: 10.48.38.38
+      cluster: crimson
+      prismcentral: crimson-pc
+      subnet: phx-routed-55-IPAM

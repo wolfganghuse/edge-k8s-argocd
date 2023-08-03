@@ -23,6 +23,7 @@ spec:
       syncPolicy:
         automated:
           prune: true
+          selfHeal: true
         syncOptions:
           - CreateNamespace=true
       project: default
@@ -57,13 +58,22 @@ spec:
                 nodes:
                   replicas: 1
                 kcpMachine:
-                  os: rockylinux-9
+                  os: ubuntu-22.04
                   subnet: '{{.subnet}}'
                   cluster: '{{.cluster}}'
                 mdMachine:
-                  os: rockylinux-9
+                  os: ubuntu-22.04
                   cluster: '{{.cluster}}'
                   subnet: '{{.subnet}}'
+                registryMirrors:
+                  - orig: quay.io
+                    mirror: harbor.infrastructure.dachlab.net/v2/quay-proxy
+                    skip_verify: false
+                    override_path: true
                 csi:
                   storageContainer: k8s
+                ccm:
+                  image:
+                    repository: harbor.infrastructure.dachlab.net/nutanix-dev/nutanix-cloud-controller-manager
+                    tag: latest
                 privateRepo:  oci://harbor.eng.nutanix.com/cloud-native/helm
