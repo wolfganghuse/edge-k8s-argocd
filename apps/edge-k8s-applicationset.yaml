@@ -34,7 +34,8 @@ spec:
       source:
         repoURL: 'git@github.com:nutanix-cloud-native/nkex-cluster.git'
         path: .
-        targetRevision: cilium-1.14
+#        targetRevision: cilium-1.14
+        targetRevision: main
         plugin:
           name: argocd-vault-plugin-helm
           env:
@@ -81,7 +82,7 @@ spec:
                   override_path: true
                 - orig: ghcr.io
                   mirror: harbor.infrastructure.dachlab.net/v2/ghcr.io
-                  override_path: false
+                  override_path: true
                 - orig: quay.io
                   mirror: harbor.infrastructure.dachlab.net/v2/quay.io
                   override_path: true
