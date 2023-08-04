@@ -41,7 +41,7 @@ spec:
             - name: HELM_VALUES
               value: |
                 cluster:
-                  kubernetesVersion: "v1.25.12"
+                  kubernetesVersion: "{{.version}}"
                 prismCentral:
                   inject: true
                   address: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
@@ -54,9 +54,9 @@ spec:
                 controlPlaneEndpoint:
                   host: '{{.controlplane_ip}}'
                 controlplane:
-                  replicas: 1
+                  replicas: 3
                 nodes:
-                  replicas: 1
+                  replicas: 2
                 users:
                   enabled: true
                   name: capiuser
@@ -81,7 +81,7 @@ spec:
                   override_path: true
                 - orig: ghcr.io
                   mirror: harbor.infrastructure.dachlab.net/v2/ghcr.io
-                  override_path: true
+                  override_path: false
                 - orig: quay.io
                   mirror: harbor.infrastructure.dachlab.net/v2/quay.io
                   override_path: true

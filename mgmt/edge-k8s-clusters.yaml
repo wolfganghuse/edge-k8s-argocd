@@ -11,6 +11,7 @@ key:
     #   prismcentral: littlelab1
     #   subnet: vlan.145-cluster2
     - name: crimson-dev
+      version: 1.27.4
       controlplane_ip: 10.48.38.38
       cluster: crimson
       prismcentral: crimson-pc
