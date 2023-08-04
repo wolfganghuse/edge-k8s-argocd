@@ -1,11 +1,13 @@
 key:
   clusters:
     - name: littlelab1-prod
+      version: v1.25.12
       controlplane_ip: 10.50.28.12
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1
     - name: littlelab1-dev
+      version: v1.27.4
       controlplane_ip: 10.50.28.245
       cluster: cluster2
       prismcentral: littlelab1
