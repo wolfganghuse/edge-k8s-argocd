@@ -34,8 +34,7 @@ spec:
       source:
         repoURL: 'git@github.com:nutanix-cloud-native/nkex-cluster.git'
         path: .
-#        targetRevision: cilium-1.14
-        targetRevision: main
+        targetRevision: cilium-1.14
         plugin:
           name: argocd-vault-plugin-helm
           env:
