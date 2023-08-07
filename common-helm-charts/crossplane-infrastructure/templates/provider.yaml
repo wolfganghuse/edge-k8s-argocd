@@ -1,8 +1,8 @@
 apiVersion: tf.upbound.io/v1beta1
 kind: ProviderConfig
 metadata:
-  name: default
-  namespace: tf-example
+  name: {{ .Values.cluster.name }}-providerconfig
+  namespace: {{ .Values.cluster.name }}
 spec:
   configuration: |
       terraform {
@@ -13,7 +13,7 @@ spec:
         }
         backend "kubernetes" {
           secret_suffix     = "providerconfig-nutanix"
-          namespace         = "crossplane-system"
+          namespace         = {{ .Values.cluster.name }}
           in_cluster_config = true
         }
       }
@@ -21,9 +21,9 @@ spec:
       
       provider "nutanix" {
 
-        username  = "automation"
-        password  = "myAutomation2023."
-        endpoint  = "crimson-pc.dachlab.net"
+        username  = {{ .Values.cluster.user }}
+        password  = {{ .Values.cluster.pass }}
+        endpoint  ={{ .Values.cluster.endpoint }}
         insecure  = true
         port      = 9440
       }
