@@ -1,0 +1,34 @@
+apiVersion: tf.upbound.io/v1beta1
+kind: Workspace
+metadata:
+  name: isolation-rule
+  annotations:
+    meta.upbound.io/example-id: tf/v1beta1/workspace
+spec:
+  forProvider:
+    source: Inline
+    module: |
+      resource "nutanix_network_security_rule" "isolation" {
+          name        = "example-isolation-rule"
+          description = "Isolation Rule Example"
+
+          isolation_rule_action = "APPLY"
+
+          isolation_rule_first_entity_filter_kind_list = ["vm"]
+          isolation_rule_first_entity_filter_type      = "CATEGORIES_MATCH_ALL"
+          isolation_rule_first_entity_filter_params {
+              name   = "Environment"
+              values = ["Dev"]
+          }
+
+          isolation_rule_second_entity_filter_kind_list = ["vm"]
+          isolation_rule_second_entity_filter_type      = "CATEGORIES_MATCH_ALL"
+          isolation_rule_second_entity_filter_params {
+              name   = "Environment"
+              values = ["Production"]
+          }
+      }
+
+  writeConnectionSecretToRef:
+    namespace: crossplane-system
+    name: providerconfig-nutanix
