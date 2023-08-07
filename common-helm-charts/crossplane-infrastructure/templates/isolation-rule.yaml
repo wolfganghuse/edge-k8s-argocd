@@ -29,7 +29,8 @@ spec:
               values = ["Production"]
           }
       }
-
+    providerConfigRef:
+      name: {{ .Values.cluster.name }}-providerconfig
   writeConnectionSecretToRef:
     namespace:  {{ .Values.cluster.name }}
     name: providerconfig-nutanix
