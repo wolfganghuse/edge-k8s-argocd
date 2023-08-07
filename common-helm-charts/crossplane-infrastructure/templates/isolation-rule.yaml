@@ -1,7 +1,8 @@
 apiVersion: tf.upbound.io/v1beta1
 kind: Workspace
 metadata:
-  name: isolation-rule
+  name: {{ .Values.cluster.name }}-isolation-rule
+  namespace: {{ .Values.cluster.name }}
   annotations:
     meta.upbound.io/example-id: tf/v1beta1/workspace
 spec:
@@ -9,8 +10,8 @@ spec:
     source: Inline
     module: |
       resource "nutanix_network_security_rule" "isolation" {
-          name        = "example-isolation-rule"
-          description = "Isolation Rule Example"
+          name        = "{{ .Values.cluster.name }}-isolation-rule"
+          description = "{{ .Values.cluster.name }}-isolation-rule"
 
           isolation_rule_action = "APPLY"
 

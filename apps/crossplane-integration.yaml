@@ -1,15 +1,55 @@
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: ApplicationSet
 metadata:
-  name: 'nutanix-flow-rules'
+  name: crossplane-infrastructure
+  namespace: argocd
 spec:
-  destination:
-    name: 'in-cluster'
-    namespace: 'argocd'
-  source:
-    path: 'crossplane'
-    repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
-    targetRevision: 'crossplane'
-  project: 'default'
-  syncPolicy:
-    automated: {}
+  goTemplate: true
+  generators:
+  - matrix:
+      generators:
+      - git:
+          repoURL: https://github.com/wolfganghuse/edge-k8s-argocd.git
+          revision: test1
+          files:
+          - path: mgmt/edge-k8s-clusters.yaml
+      - list:
+          elements: []
+          elementsYaml: "{{ .key.clusters | toJson }}"
+  template:
+    metadata:
+      name: '{{.name}}'
+    spec:
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+      project: default
+      destination:
+        name: ''
+        namespace: '{{.name}}'
+        server: 'https://kubernetes.default.svc'
+      source:
+        path: 'common-helm-charts'
+        repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
+        targetRevision: 'crossplane'
+        plugin:
+          name: argocd-vault-plugin-helm
+          env:
+            - name: HELM_VALUES
+              value: |
+                cluster:
+                  kubernetesVersion: "{{.version}}"
+                prismCentral:
+                  inject: true
+                  address: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
+                  username: <path:secret/data/prismcentral/{{.prismcentral}}#user>
+                  password: <path:secret/data/prismcentral/{{.prismcentral}}#pass>
+                primElement:
+                  address: <path:secret/data/prismelement/{{.cluster}}#endpoint>
+                  username: <path:secret/data/prismelement/{{.cluster}}#user>
+                  password: <path:secret/data/prismelement/{{.cluster}}#pass>
+                controlPlaneEndpoint:
+                  host: '{{.controlplane_ip}}'
