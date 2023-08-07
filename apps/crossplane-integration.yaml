@@ -18,7 +18,7 @@ spec:
           elementsYaml: "{{ .key.clusters | toJson }}"
   template:
     metadata:
-      name: '{{.name}}'
+      name: '{{.name}}-crossplane'
     spec:
       syncPolicy:
         automated:
@@ -32,7 +32,7 @@ spec:
         namespace: '{{.name}}'
         server: 'https://kubernetes.default.svc'
       source:
-        path: 'common-helm-charts'
+        path: 'common-helm-charts/crossplane-infrastructure'
         repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
         targetRevision: 'crossplane'
         plugin:
@@ -41,15 +41,4 @@ spec:
             - name: HELM_VALUES
               value: |
                 cluster:
-                  kubernetesVersion: "{{.version}}"
-                prismCentral:
-                  inject: true
-                  address: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
-                  username: <path:secret/data/prismcentral/{{.prismcentral}}#user>
-                  password: <path:secret/data/prismcentral/{{.prismcentral}}#pass>
-                primElement:
-                  address: <path:secret/data/prismelement/{{.cluster}}#endpoint>
-                  username: <path:secret/data/prismelement/{{.cluster}}#user>
-                  password: <path:secret/data/prismelement/{{.cluster}}#pass>
-                controlPlaneEndpoint:
-                  host: '{{.controlplane_ip}}'
+                  name: "{{.name}}"
