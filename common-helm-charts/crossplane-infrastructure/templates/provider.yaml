@@ -13,7 +13,7 @@ spec:
         }
         backend "kubernetes" {
           secret_suffix     = "providerconfig-nutanix"
-          namespace         = {{ .Values.cluster.name }}
+          namespace         = "{{ .Values.cluster.name }}"
           in_cluster_config = true
         }
       }
@@ -21,9 +21,9 @@ spec:
       
       provider "nutanix" {
 
-        username  = {{ .Values.cluster.user }}
-        password  = {{ .Values.cluster.pass }}
-        endpoint  = {{ .Values.cluster.endpoint }}
+        username  = "{{ .Values.cluster.user }}"
+        password  = "{{ .Values.cluster.pass }}"
+        endpoint  = "{{ .Values.cluster.endpoint }}"
         insecure  = true
         port      = 9440
       }
