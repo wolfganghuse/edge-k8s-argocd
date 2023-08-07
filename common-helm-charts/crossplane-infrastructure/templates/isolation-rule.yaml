@@ -31,5 +31,5 @@ spec:
       }
 
   writeConnectionSecretToRef:
-    namespace: crossplane-system
+    namespace:  {{ .Values.cluster.name }}
     name: providerconfig-nutanix

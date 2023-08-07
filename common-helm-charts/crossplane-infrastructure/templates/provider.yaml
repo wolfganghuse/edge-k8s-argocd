@@ -23,7 +23,7 @@ spec:
 
         username  = {{ .Values.cluster.user }}
         password  = {{ .Values.cluster.pass }}
-        endpoint  ={{ .Values.cluster.endpoint }}
+        endpoint  = {{ .Values.cluster.endpoint }}
         insecure  = true
         port      = 9440
       }
