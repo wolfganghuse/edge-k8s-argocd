@@ -75,7 +75,7 @@ spec:
                   - key: AppType
                     value: Kubernetes
                   - key: Environment
-                    value: '{{.cluster}}'
+                    value: '{{.name}}'
                 mdMachine:
                   os: ubuntu-2204
                   cluster: '{{.cluster}}'
@@ -86,7 +86,7 @@ spec:
                   - key: AppType
                     value: Kubernetes
                   - key: Environment
-                    value: '{{.cluster}}'
+                    value: '{{.name}}'
                 registryMirrors:
                 - orig: _default
                   mirror: harbor.infrastructure.dachlab.net/v2/docker.io
