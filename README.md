@@ -158,6 +158,19 @@ kubectl create -f https://github.com/kyverno/kyverno/releases/download/v1.10.1-r
 kubectl apply -f scripts/kyverno-policy.yaml
 ```
 
+# Crossplane
+Crossplane is used for additional Terraform-based Infrastructure components like Flow Polices
+
+```
+helm repo add crossplane-stable https://charts.crossplane.io/stable
+helm repo update
+helm install crossplane --namespace crossplane-system --create-namespace crossplane-stable/crossplane
+```
+
+Install Terraform Provider for Crossplane
+```
+kubectl apply -f scripts/crossplane.yaml
+```
 
 
 
