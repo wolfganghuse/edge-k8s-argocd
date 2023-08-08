@@ -12,8 +12,6 @@ spec:
   template:
     metadata:
       name: '{{name}}-workload'
-      annotations:
-        argocd.argoproj.io/sync-wave: "3"
     spec:
       syncPolicy:
         automated:
