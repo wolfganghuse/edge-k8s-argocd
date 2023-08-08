@@ -54,9 +54,9 @@ spec:
                 controlPlaneEndpoint:
                   host: '{{.controlplane_ip}}'
                 controlplane:
-                  replicas: 3
+                  replicas: 1
                 nodes:
-                  replicas: 2
+                  replicas: 1
                 users:
                   enabled: true
                   name: capiuser
