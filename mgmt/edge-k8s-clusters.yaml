@@ -18,3 +18,9 @@ key:
       cluster: crimson
       prismcentral: crimson-pc
       subnet: phx-routed-55-IPAM
+    - name: crimson-prod
+      version: v1.25.12
+      controlplane_ip: 10.48.38.37
+      cluster: crimson
+      prismcentral: crimson-pc
+      subnet: phx-routed-55-IPAM
