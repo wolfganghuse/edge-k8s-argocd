@@ -10,7 +10,7 @@ spec:
       generators:
       - git:
           repoURL: https://github.com/wolfganghuse/edge-k8s-argocd.git
-          revision: main
+          revision: test1
           files:
           - path: mgmt/edge-k8s-clusters.yaml
       - list:
@@ -23,6 +23,7 @@ spec:
       syncPolicy:
         automated:
           prune: true
+          selfHeal: true
         syncOptions:
           - CreateNamespace=true
       project: default
@@ -33,36 +34,35 @@ spec:
       source:
         repoURL: 'git@github.com:nutanix-cloud-native/nkex-cluster.git'
         path: .
-        targetRevision: main
+        targetRevision: cilium-1.14
         plugin:
           name: argocd-vault-plugin-helm
           env:
             - name: HELM_VALUES
               value: |
                 cluster:
-                  kubernetesVersion: "v1.25.12"
+                  kubernetesVersion: "{{.version}}"
                 prismCentral:
                   inject: true
                   address: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
-                  insecure: false
-                  port: 9440
                   username: <path:secret/data/prismcentral/{{.prismcentral}}#user>
                   password: <path:secret/data/prismcentral/{{.prismcentral}}#pass>
                 primElement:
                   address: <path:secret/data/prismelement/{{.cluster}}#endpoint>
-                  insecure: false
-                  port: 9440
                   username: <path:secret/data/prismelement/{{.cluster}}#user>
                   password: <path:secret/data/prismelement/{{.cluster}}#pass>
                 controlPlaneEndpoint:
                   host: '{{.controlplane_ip}}'
                 controlplane:
-                  replicas: 1
+                  replicas: 3
                 nodes:
-                  replicas: 1
-                kubeVip:
-                  cloudProvider:
-                    enabled: false
+                  replicas: 2
+                users:
+                  enabled: true
+                  name: capiuser
+                  sudo: true
+                  sshAuthorizedKeys:
+                    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC8zdJu/B43jajqKe6kGzce7oX4i2iVsom4yKafxziZjKO0LLvYYugv9rwAORCHHwNHbp9ZNdQYe43bRQZj+bxeBqz/yvla6u5oCHHmnS5ZePgyxAjYYfG8GETtY6rl12tgVLQWgaQubCQ2XNlyhkA+z5erSdd+wEStQjKcnzls4o/2v9GTAfjzJT76ZJ17QaghPH2Jh9XuTZQHJfRjT7dzuJA8+oYFbH8BI+y8K84BaO73XTIdPoxYoLKRVhwrAyA8yKenj0sfrRSaOtkwuUFWJdW/ehRboo8PV5R81faTB6R4pwTQcAwnjUbNQD7mjvseLihEJcC7Uz9+od+1I9/zrbmhgHk3ffv9SnhZrVKkQrMxoQIjnfZEmi0U439zeJkyUsXc0Xelr4aYnu46RzeYe2EWshHBN8JS9ug2AfPGeBaiYLqLWcWnJbpixHAF33vYD0Jxxu0vs9W5SNlV9gMq445zk6Mco/utPSMOkZfyXajzBCTKJ+9Zg1I0ZmjFOpM= wolfganghuse@hpoc
                 kcpMachine:
                   os: ubuntu-2204
                   subnet: '{{.subnet}}'
@@ -71,16 +71,24 @@ spec:
                   os: ubuntu-2204
                   cluster: '{{.cluster}}'
                   subnet: '{{.subnet}}'
-                  machinehealthcheck: false
-                ccm:
-                  enabled: true
-                  replicas: 1
-                  enableCustomLabeling: false
-                metricsServer:
-                  enabled: false
+                registryMirrors:
+                - orig: _default
+                  mirror: harbor.infrastructure.dachlab.net/v2/docker.io
+                  skip_verify: false
+                  override_path: true
+                - orig: registry.k8s.io
+                  mirror: harbor.infrastructure.dachlab.net/v2/registry.k8s.io
+                  override_path: true
+                - orig: ghcr.io
+                  mirror: harbor.infrastructure.dachlab.net/v2/ghcr.io
+                  override_path: true
+                - orig: quay.io
+                  mirror: harbor.infrastructure.dachlab.net/v2/quay.io
+                  override_path: true
                 csi:
-                  snapshot: true
-                  enable_csi2: true
-                  enable_csi3: false
-                  createSecret: true
                   storageContainer: k8s
+                ccm:
+                  image:
+                    repository: harbor.infrastructure.dachlab.net/nutanix-dev/nutanix-cloud-controller-manager
+                    tag: latest
+                privateRepo:  oci://harbor.eng.nutanix.com/cloud-native/helm

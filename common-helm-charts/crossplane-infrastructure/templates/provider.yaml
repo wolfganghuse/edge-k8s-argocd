@@ -1,0 +1,29 @@
+apiVersion: tf.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: {{ .Values.cluster.name }}-providerconfig
+  namespace: {{ .Values.cluster.name }}
+spec:
+  configuration: |
+      terraform {
+        required_providers {
+          nutanix = {
+            source = "nutanix/nutanix"
+          }
+        }
+        backend "kubernetes" {
+          secret_suffix     = "providerconfig-nutanix"
+          namespace         = "{{ .Values.cluster.name }}"
+          in_cluster_config = true
+        }
+      }
+
+      
+      provider "nutanix" {
+
+        username  = "{{ .Values.cluster.user }}"
+        password  = "{{ .Values.cluster.pass }}"
+        endpoint  = "{{ .Values.cluster.endpoint }}"
+        insecure  = true
+        port      = 9440
+      }
