@@ -22,7 +22,7 @@ spec:
       project: default
       destination:
         server: '{{server}}'
-        namespace: capx-system
+        namespace: nutanix-infrastructure-system
       sources:
       - repoURL: 'https://kubernetes-sigs.github.io/cluster-api-operator'
         chart: cluster-api-operator
@@ -34,7 +34,7 @@ spec:
             - name: secretName
               value: nutanix-variables
             - name: secretNamespace
-              value: capx-system
+              value: nutanix-infrastructure-system
             - name: cert-manager.enabled
               value: "true"
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
