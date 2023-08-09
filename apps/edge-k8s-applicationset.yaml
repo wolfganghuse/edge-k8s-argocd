@@ -28,7 +28,6 @@ spec:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
-          - ServerSideApply=true
       project: default
       destination:
         name: ''
@@ -46,7 +45,7 @@ spec:
                 cluster:
                   kubernetesVersion: "{{.version}}"
                 prismCentral:
-                  inject: false
+                  inject: true
                   address: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
                   username: <path:secret/data/prismcentral/{{.prismcentral}}#user>
                   password: <path:secret/data/prismcentral/{{.prismcentral}}#pass>

@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: workload
+  namespace: argocd
+spec:
+  generators:
+  - clusters:
+      selector:
+        matchLabels:
+          argocd.argoproj.io/secret-type: cluster
+  template:
+    metadata:
+      name: '{{name}}-workload'
+    spec:
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
+      project: default
+      source:
+        repoURL: 'https://kubernetes-sigs.github.io/cluster-api-operator'
+        chart: capi-operator
+        targetRevision: 0.5.0
+      helm:
+        parameters:
+          - name: infrastructure
+            value: "nutanix"
+          - name: cert-manager.enabled
+            value: "true"
+      destination:
+        server: '{{server}}'
+        namespace: capi-operator-system
