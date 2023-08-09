@@ -18,5 +18,5 @@ spec:
   providerConfigRef:
     name: {{ .Values.cluster.name }}-providerconfig
   writeConnectionSecretToRef:
-    namespace:  crossplane-system
-    name: providerconfig-nutanix
+    namespace:  {{ .Values.cluster.name }}
+    name: providerconfig-nutanix-images

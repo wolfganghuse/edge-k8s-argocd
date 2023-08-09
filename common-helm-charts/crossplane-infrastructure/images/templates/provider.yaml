@@ -11,7 +11,7 @@ spec:
           }
         }
         backend "kubernetes" {
-          secret_suffix     = "providerconfig-nutanix"
+          secret_suffix     = "providerconfig-nutanix-images"
           namespace         = "{{ .Values.cluster.name }}"
           in_cluster_config = true
         }
