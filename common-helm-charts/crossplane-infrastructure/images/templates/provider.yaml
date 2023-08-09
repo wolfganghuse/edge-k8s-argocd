@@ -3,9 +3,6 @@ kind: ProviderConfig
 metadata:
   name: {{ .Values.cluster.name }}-providerconfig
   namespace: crossplane-system
-  annotations:
-    "helm.sh/resource-policy": keep
-    "argocd.argoproj.io/sync-options": Delete=false
 spec:
   configuration: |
       terraform {
