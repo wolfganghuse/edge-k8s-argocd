@@ -18,7 +18,6 @@ spec:
       }
   providerConfigRef:
     name: {{ .Values.cluster.name }}-providerconfig
-    namespace:  {{ .Values.cluster.name }}-infra
   writeConnectionSecretToRef:
     namespace:  {{ .Values.cluster.name }}-infra
     name: providerconfig-nutanix
