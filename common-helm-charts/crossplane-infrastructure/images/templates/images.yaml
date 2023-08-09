@@ -1,7 +1,7 @@
 apiVersion: tf.upbound.io/v1beta1
 kind: Workspace
 metadata:
-  name: {{ .Values.cluster.name }}-isolation-rule
+  name: {{ .Values.cluster.name }}-images
   namespace: {{ .Values.cluster.name }}-infra
   annotations:
     meta.upbound.io/example-id: tf/v1beta1/workspace

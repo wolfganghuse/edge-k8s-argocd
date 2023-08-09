@@ -18,7 +18,7 @@ spec:
           elementsYaml: "{{ .key.prismcentral | toJson }}"
   template:
     metadata:
-      name: '{{.name}}-crossplane'
+      name: '{{.name}}-infrastructure-integration'
       annotations:
         argocd.argoproj.io/sync-wave: "1"
     spec:
@@ -31,7 +31,7 @@ spec:
       project: default
       destination:
         name: ''
-        namespace: '{{.name}}'
+        namespace: '{{.name}}-infra'
         server: 'https://kubernetes.default.svc'
       source:
         path: 'common-helm-charts/crossplane-infrastructure/images'
