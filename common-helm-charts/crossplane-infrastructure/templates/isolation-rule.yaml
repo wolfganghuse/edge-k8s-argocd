@@ -50,6 +50,14 @@ spec:
               values = ["Production"]
           }
       }
+
+      resource "nutanix_image" "source_image" {
+
+        provider = nutanix
+
+        source_uri = "https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.27.4.qcow2"
+        name = "ubuntu-2204-kube-v1.27.4"
+      }
   providerConfigRef:
     name: {{ .Values.cluster.name }}-providerconfig
   writeConnectionSecretToRef:
