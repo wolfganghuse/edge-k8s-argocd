@@ -30,7 +30,7 @@ spec:
           - CreateNamespace=true
       project: default
       destination:
-        name: '{{.name}}-images'
+        name: ''
         namespace: '{{.name}}'
         server: 'https://kubernetes.default.svc'
       source:
