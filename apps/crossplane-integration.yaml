@@ -12,10 +12,10 @@ spec:
           repoURL: https://github.com/wolfganghuse/edge-k8s-argocd.git
           revision: test1
           files:
-          - path: mgmt/edge-k8s-clusters.yaml
+          - path: mgmt/prismcentral.yaml
       - list:
           elements: []
-          elementsYaml: "{{ .key.clusters | toJson }}"
+          elementsYaml: "{{ .key.prismcentral | toJson }}"
   template:
     metadata:
       name: '{{.name}}-crossplane'
@@ -44,6 +44,6 @@ spec:
               value: |
                 cluster:
                   name: "{{.name}}"
-                  endpoint: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
-                  user: <path:secret/data/prismcentral/{{.prismcentral}}#user>
-                  pass: <path:secret/data/prismcentral/{{.prismcentral}}#pass>
+                  endpoint: <path:secret/data/prismcentral/{{.name}}#endpoint>
+                  user: <path:secret/data/prismcentral/{{.name}}#user>
+                  pass: <path:secret/data/prismcentral/{{.name}}#pass>
