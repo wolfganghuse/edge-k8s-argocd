@@ -26,8 +26,14 @@ spec:
         targetRevision: 0.5.0
         helm:
           parameters:
+            - name: infrastructure
+              value: "nutanix"
+            - name: secretName
+              value: nutanix-variables
+            - name: secretNamespace
+              value: capx-system
             - name: cert-manager.enabled
               value: "true"
       destination:
         server: '{{server}}'
-        namespace: capi-operator-system
+        namespace: capx-system
