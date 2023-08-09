@@ -2,7 +2,6 @@ apiVersion: tf.upbound.io/v1beta1
 kind: Workspace
 metadata:
   name: {{ .Values.cluster.name }}-images
-  namespace: {{ .Values.cluster.name }}-infra
   annotations:
     meta.upbound.io/example-id: tf/v1beta1/workspace
 spec:
@@ -19,5 +18,5 @@ spec:
   providerConfigRef:
     name: {{ .Values.cluster.name }}-providerconfig
   writeConnectionSecretToRef:
-    namespace:  {{ .Values.cluster.name }}-infra
+    namespace:  crossplane-system
     name: providerconfig-nutanix

@@ -31,7 +31,7 @@ spec:
       project: default
       destination:
         name: ''
-        namespace: '{{.name}}-infra'
+        namespace: '{{.name}}'
         server: 'https://kubernetes.default.svc'
       source:
         path: 'common-helm-charts/crossplane-infrastructure/images'
@@ -44,6 +44,5 @@ spec:
               value: |
                 cluster:
                   name: "{{.name}}"
-                  endpoint: <path:secret/data/prismcentral/{{.name}}#endpoint>
                   user: <path:secret/data/prismcentral/{{.name}}#user>
                   pass: <path:secret/data/prismcentral/{{.name}}#pass>
