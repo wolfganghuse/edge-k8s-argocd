@@ -11,13 +11,12 @@ spec:
           }
         }
         backend "kubernetes" {
-          secret_suffix     = "providerconfig-nutanix-images"
+          secret_suffix     = "backend-nutanix-images"
           namespace         = "{{ .Values.cluster.name }}"
           in_cluster_config = true
         }
       }
 
-      
       provider "nutanix" {
 
         username  = "{{ .Values.cluster.user }}"
