@@ -3,6 +3,9 @@ kind: ProviderConfig
 metadata:
   name: {{ .Values.cluster.name }}-providerconfig
   namespace: {{ .Values.cluster.name }}
+  annotations:
+    "helm.sh/resource-policy": keep
+    "argocd.argoproj.io/sync-options": Delete=false
 spec:
   configuration: |
       terraform {

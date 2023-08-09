@@ -19,6 +19,8 @@ spec:
   template:
     metadata:
       name: '{{.name}}-crossplane'
+      annotations:
+        argocd.argoproj.io/sync-wave: "1"
     spec:
       syncPolicy:
         automated:
@@ -34,7 +36,7 @@ spec:
       source:
         path: 'common-helm-charts/crossplane-infrastructure'
         repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
-        targetRevision: 'crossplane'
+        targetRevision: 'test1'
         plugin:
           name: argocd-vault-plugin-helm
           env:

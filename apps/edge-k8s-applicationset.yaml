@@ -19,6 +19,8 @@ spec:
   template:
     metadata:
       name: '{{.name}}'
+      annotations:
+        argocd.argoproj.io/sync-wave: "2"
     spec:
       syncPolicy:
         automated:
@@ -54,9 +56,9 @@ spec:
                 controlPlaneEndpoint:
                   host: '{{.controlplane_ip}}'
                 controlplane:
-                  replicas: 3
+                  replicas: 1
                 nodes:
-                  replicas: 2
+                  replicas: 1
                 users:
                   enabled: true
                   name: capiuser
@@ -67,10 +69,24 @@ spec:
                   os: ubuntu-2204
                   subnet: '{{.subnet}}'
                   cluster: '{{.cluster}}'
+                  additionalCategories:
+                  - key: AppTier
+                    value: ControlPlane
+                  - key: AppType
+                    value: Kubernetes
+                  - key: Environment
+                    value: '{{.name}}'
                 mdMachine:
                   os: ubuntu-2204
                   cluster: '{{.cluster}}'
                   subnet: '{{.subnet}}'
+                  additionalCategories:
+                  - key: AppTier
+                    value: Worker
+                  - key: AppType
+                    value: Kubernetes
+                  - key: Environment
+                    value: '{{.name}}'
                 registryMirrors:
                 - orig: _default
                   mirror: harbor.infrastructure.dachlab.net/v2/docker.io
@@ -85,6 +101,9 @@ spec:
                 - orig: quay.io
                   mirror: harbor.infrastructure.dachlab.net/v2/quay.io
                   override_path: true
+                - orig: gcr.io
+                  mirror: harbor.infrastructure.dachlab.net/v2/gcr.io
+                  override_path: true                  
                 csi:
                   storageContainer: k8s
                 ccm:
