@@ -12,10 +12,10 @@ spec:
           repoURL: https://github.com/wolfganghuse/edge-k8s-argocd.git
           revision: test1
           files:
-          - path: mgmt/prismcentral.yaml
+          - path: mgmt/edge-k8s-clusters.yaml
       - list:
           elements: []
-          elementsYaml: "{{ .key.prismcentral | toJson }}"
+          elementsYaml: "{{ .key.clusters | toJson }}"
   template:
     metadata:
       name: '{{.name}}-crossplane'
@@ -34,7 +34,7 @@ spec:
         namespace: '{{.name}}'
         server: 'https://kubernetes.default.svc'
       source:
-        path: 'common-helm-charts/crossplane-infrastructure'
+        path: 'common-helm-charts/crossplane-infrastructure/flow'
         repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
         targetRevision: 'test1'
         plugin:
@@ -44,6 +44,6 @@ spec:
               value: |
                 cluster:
                   name: "{{.name}}"
-                  endpoint: <path:secret/data/prismcentral/{{.name}}#endpoint>
-                  user: <path:secret/data/prismcentral/{{.name}}#user>
-                  pass: <path:secret/data/prismcentral/{{.name}}#pass>
+                  endpoint: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
+                  user: <path:secret/data/prismcentral/{{.prismcentral}}#user>
+                  pass: <path:secret/data/prismcentral/{{.prismcentral}}#pass>
