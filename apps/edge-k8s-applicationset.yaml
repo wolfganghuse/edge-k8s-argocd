@@ -101,6 +101,9 @@ spec:
                 - orig: quay.io
                   mirror: harbor.infrastructure.dachlab.net/v2/quay.io
                   override_path: true
+                - orig: gcr.io
+                  mirror: harbor.infrastructure.dachlab.net/v2/gcr.io
+                  override_path: true                  
                 csi:
                   storageContainer: k8s
                 ccm:
