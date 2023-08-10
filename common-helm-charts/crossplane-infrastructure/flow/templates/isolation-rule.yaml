@@ -40,7 +40,7 @@ spec:
           isolation_rule_first_entity_filter_type      = "CATEGORIES_MATCH_ALL"
           isolation_rule_first_entity_filter_params {
               name   = "Environment"
-              values = ["Dev"]
+              values = [{{ .Values.cluster.name }}]
           }
 
           isolation_rule_second_entity_filter_kind_list = ["vm"]
