@@ -1,7 +1,7 @@
 apiVersion: tf.upbound.io/v1beta1
 kind: Workspace
 metadata:
-  name: {{ .Values.cluster.name }}-isolation-rule
+  name: {{ .Values.cluster.name }}-flow
   namespace: {{ .Values.cluster.name }}
   annotations:
     meta.upbound.io/example-id: tf/v1beta1/workspace
@@ -50,16 +50,8 @@ spec:
               values = ["Production"]
           }
       }
-
-      resource "nutanix_image" "source_image" {
-
-        provider = nutanix
-
-        source_uri = "https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.27.4.qcow2"
-        name = "ubuntu-2204-kube-v1.27.4"
-      }
   providerConfigRef:
-    name: {{ .Values.cluster.name }}-providerconfig
+    name: {{ .Values.cluster.prismcentral }}-providerconfig
   writeConnectionSecretToRef:
     namespace:  {{ .Values.cluster.name }}
-    name: providerconfig-nutanix
+    name: connection-nutanix-flow
