@@ -34,7 +34,7 @@ spec:
           name        = "{{ .Values.cluster.name }}-isolation-rule"
           description = "{{ .Values.cluster.name }}-isolation-rule"
 
-          isolation_rule_action = "APPLY"
+          isolation_rule_action = "MONITOR"
 
           isolation_rule_first_entity_filter_kind_list = ["vm"]
           isolation_rule_first_entity_filter_type      = "CATEGORIES_MATCH_ALL"
