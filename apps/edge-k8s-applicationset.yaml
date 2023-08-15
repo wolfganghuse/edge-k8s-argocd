@@ -21,6 +21,9 @@ spec:
       name: '{{.name}}'
       annotations:
         argocd.argoproj.io/sync-wave: "2"
+      labels: 
+        cd-component: capx-cluster
+        environment: '{{.name}}'
     spec:
       syncPolicy:
         automated:
