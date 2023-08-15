@@ -45,7 +45,7 @@ spec:
                 cluster:
                   kubernetesVersion: "{{.version}}"
                 prismCentral:
-                  inject: true
+                  inject: false
                   address: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
                   username: <path:secret/data/prismcentral/{{.prismcentral}}#user>
                   password: <path:secret/data/prismcentral/{{.prismcentral}}#pass>
@@ -56,9 +56,9 @@ spec:
                 controlPlaneEndpoint:
                   host: '{{.controlplane_ip}}'
                 controlplane:
-                  replicas: 1
+                  replicas: 3
                 nodes:
-                  replicas: 1
+                  replicas: 3
                 users:
                   enabled: true
                   name: capiuser
