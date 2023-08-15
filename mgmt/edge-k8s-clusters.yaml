@@ -6,21 +6,167 @@ key:
     #   cluster: cluster1
     #   prismcentral: littlelab1
     #   subnet: vlan.145-cluster1
-    # - name: littlelab1-dev
-    #   version: v1.27.4
-    #   controlplane_ip: 10.50.28.245
-    #   cluster: cluster2
-    #   prismcentral: littlelab1
-    #   subnet: vlan.145-cluster2
-    - name: crimson-dev
+    - name: littlelab1-11
+      version: v1.27.4
+      controlplane_ip: 10.50.28.41
+      cluster: cluster1
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster1
+    - name: littlelab1-12
+      version: v1.27.4
+      controlplane_ip: 10.50.28.42
+      cluster: cluster1
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster1
+    - name: littlelab1-13
+      version: v1.27.4
+      controlplane_ip: 10.50.28.43
+      cluster: cluster1
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster1
+    - name: littlelab1-14
+      version: v1.27.4
+      controlplane_ip: 10.50.28.44
+      cluster: cluster1
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster1
+    - name: littlelab1-15
+      version: v1.27.4
+      controlplane_ip: 10.50.28.45
+      cluster: cluster1
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster1
+    - name: littlelab1-16
+      version: v1.27.4
+      controlplane_ip: 10.50.28.46
+      cluster: cluster1
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster1
+    - name: littlelab1-17
+      version: v1.27.4
+      controlplane_ip: 10.50.28.47
+      cluster: cluster1
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster1
+    - name: littlelab1-18
+      version: v1.27.4
+      controlplane_ip: 10.50.28.48
+      cluster: cluster1
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster1
+    - name: littlelab1-19
+      version: v1.27.4
+      controlplane_ip: 10.50.28.49
+      cluster: cluster1
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster1
+
+    - name: littlelab1-1
+      version: v1.27.4
+      controlplane_ip: 10.50.28.201
+      cluster: cluster2
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster2
+    - name: littlelab1-2
+      version: v1.27.4
+      controlplane_ip: 10.50.28.202
+      cluster: cluster2
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster2
+    - name: littlelab1-3
+      version: v1.27.4
+      controlplane_ip: 10.50.28.203
+      cluster: cluster2
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster2
+    - name: littlelab1-4
+      version: v1.27.4
+      controlplane_ip: 10.50.28.204
+      cluster: cluster2
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster2
+    - name: littlelab1-5
+      version: v1.27.4
+      controlplane_ip: 10.50.28.205
+      cluster: cluster2
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster2
+    - name: littlelab1-6
+      version: v1.27.4
+      controlplane_ip: 10.50.28.206
+      cluster: cluster2
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster2
+    - name: littlelab1-7
+      version: v1.27.4
+      controlplane_ip: 10.50.28.207
+      cluster: cluster2
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster2
+    - name: littlelab1-8
+      version: v1.27.4
+      controlplane_ip: 10.50.28.208
+      cluster: cluster2
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster2
+    - name: littlelab1-9
+      version: v1.27.4
+      controlplane_ip: 10.50.28.209
+      cluster: cluster2
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster2
+      
+    - name: crimson-1
+      version: v1.27.4
+      controlplane_ip: 10.48.38.31
+      cluster: crimson
+      prismcentral: crimson-pc
+      subnet: phx-routed-55-IPAM
+    - name: crimson-2
+      version: v1.27.4
+      controlplane_ip: 10.48.38.32
+      cluster: crimson
+      prismcentral: crimson-pc
+      subnet: phx-routed-55-IPAM
+    - name: crimson-3
+      version: v1.27.4
+      controlplane_ip: 10.48.38.33
+      cluster: crimson
+      prismcentral: crimson-pc
+      subnet: phx-routed-55-IPAM
+    - name: crimson-4
+      version: v1.27.4
+      controlplane_ip: 10.48.38.34
+      cluster: crimson
+      prismcentral: crimson-pc
+      subnet: phx-routed-55-IPAM
+    - name: crimson-5
+      version: v1.27.4
+      controlplane_ip: 10.48.38.35
+      cluster: crimson
+      prismcentral: crimson-pc
+      subnet: phx-routed-55-IPAM
+    - name: crimson-6
+      version: v1.27.4
+      controlplane_ip: 10.48.38.36
+      cluster: crimson
+      prismcentral: crimson-pc
+      subnet: phx-routed-55-IPAM
+    - name: crimson-7
+      version: v1.27.4
+      controlplane_ip: 10.48.38.37
+      cluster: crimson
+      prismcentral: crimson-pc
+      subnet: phx-routed-55-IPAM
+    - name: crimson-8
       version: v1.27.4
       controlplane_ip: 10.48.38.38
       cluster: crimson
       prismcentral: crimson-pc
       subnet: phx-routed-55-IPAM
-    # - name: crimson-prod
-    #   version: v1.25.12
-    #   controlplane_ip: 10.48.38.37
-    #   cluster: crimson
-    #   prismcentral: crimson-pc
-    #   subnet: phx-routed-55-IPAM
+    - name: crimson-9
+      version: v1.27.4
+      controlplane_ip: 10.48.38.39
+      cluster: crimson
+      prismcentral: crimson-pc
+      subnet: phx-routed-55-IPAM
