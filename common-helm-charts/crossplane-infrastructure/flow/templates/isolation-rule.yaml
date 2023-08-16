@@ -46,7 +46,7 @@ spec:
         value       = "Worker"
       }   
 
-      
+
       //Create Security Policy
       resource "nutanix_network_security_rule" "{{ .Values.cluster.name }}-isolation" {
           name        = "{{ .Values.cluster.name }}-isolation-rule"
@@ -71,5 +71,5 @@ spec:
   providerConfigRef:
     name: {{ .Values.cluster.prismcentral }}-providerconfig
   writeConnectionSecretToRef:
-    namespace:  {{ .Values.cluster.name }}
+    namespace:  {{ .Values.cluster.prismcentral }}
     name: connection-nutanix-flow-{{ .Values.cluster.name }}
