@@ -45,9 +45,8 @@ spec:
         value       = "Worker"
       }     
 
-      
   providerConfigRef:
-    name: {{ .Values.cluster.name }}-providerconfig
+    name: {{ .Values.cluster.prismcentral }}-providerconfig
   writeConnectionSecretToRef:
     namespace:  {{ .Values.cluster.name }}
-    name: connection-nutanix-categories
+  name: connection-nutanix-categories-{{ .Values.cluster.name }}
