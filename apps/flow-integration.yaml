@@ -36,17 +36,8 @@ spec:
         name: ''
         namespace: '{{.name}}'
         server: 'https://kubernetes.default.svc'
-      sources:
-      - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
-        path: 'common-helm-charts/crossplane-infrastructure/categories'
-        targetRevision: 'test1'
-        helm:
-          parameters:
-          - name: "cluster.name"
-            value: '{{.name}}'
-          - name: "cluster.prismcentral"
-            value: '{{.prismcentral}}'
-      - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
+      source:
+        repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
         path: 'common-helm-charts/crossplane-infrastructure/flow'
         targetRevision: 'test1'
         helm:
