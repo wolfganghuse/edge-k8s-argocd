@@ -21,6 +21,9 @@ spec:
       name: '{{.name}}-flow'
       annotations:
         argocd.argoproj.io/sync-wave: "1"
+      labels: 
+        cd-component: flow
+        environment: '{{.name}}'
     spec:
       syncPolicy:
         automated:

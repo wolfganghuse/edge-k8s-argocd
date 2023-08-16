@@ -21,6 +21,9 @@ spec:
       name: '{{.name}}-infrastructure-integration'
       annotations:
         argocd.argoproj.io/sync-wave: "1"
+      labels: 
+        cd-component: infrastructure
+        environment: '{{.name}}'
     spec:
       syncPolicy:
         automated:
