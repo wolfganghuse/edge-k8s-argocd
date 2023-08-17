@@ -12,16 +12,31 @@ spec:
 
         provider = nutanix
 
+        source_uri = "https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.28.0.qcow2"
+        name = "ubuntu-2204-kube-v1.28.0"
+      }
+      resource "nutanix_image" "source_image" {
+
+        provider = nutanix
+
         source_uri = "https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.27.4.qcow2"
         name = "ubuntu-2204-kube-v1.27.4"
       }
-      # resource "nutanix_image" "source_image2" {
+      resource "nutanix_image" "source_image2" {
 
-      #   provider = nutanix
+        provider = nutanix
 
-      #   source_uri = "https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.25.12.qcow2"
-      #   name = "ubuntu-2204-kube-v1.25.12"
-      # }
+        source_uri = "https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.26.7.qcow2"
+        name = "ubuntu-2204-kube-v1.26.7"
+      }
+      resource "nutanix_image" "source_image2" {
+
+        provider = nutanix
+
+        source_uri = "https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.25.12.qcow2"
+        name = "ubuntu-2204-kube-v1.25.12"
+      }
+      
   providerConfigRef:
     name: {{ .Values.cluster.name }}-providerconfig
   writeConnectionSecretToRef:
