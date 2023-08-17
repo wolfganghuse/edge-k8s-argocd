@@ -34,8 +34,8 @@ spec:
         name: ''
         namespace: '{{.name}}'
         server: 'https://kubernetes.default.svc'
-      source:
-        repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
+      sources:
+      - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
         path: 'common-helm-charts/crossplane-infrastructure/flow'
         targetRevision: 'test1'
         plugin:
@@ -49,3 +49,12 @@ spec:
                   user: <path:secret/data/prismcentral/{{.prismcentral}}#user>
                   pass: <path:secret/data/prismcentral/{{.prismcentral}}#pass>
                   endpoint: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
+      - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
+        path: common-helm-charts/external-secrets
+        targetRevision: main
+        helm:
+          parameters:
+          - name: "cluster.name"
+            value: '{{.name}}'
+          - name: "credentialsecret.key"
+            value: 'secret/data/prismcentral/{{.prismcentral}}'
