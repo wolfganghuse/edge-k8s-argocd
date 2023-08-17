@@ -3,6 +3,8 @@ kind: ApplicationSet
 metadata:
   name: per-cluster-settings
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   goTemplate: true
   generators:
@@ -19,7 +21,7 @@ spec:
   template:
     metadata:
       annotations:
-        argocd.argoproj.io/sync-wave: "2"
+        argocd.argoproj.io/sync-wave: "3"
       name: '{{.name}}-per-cluster-settings'
       labels: 
         cd-component: flow
