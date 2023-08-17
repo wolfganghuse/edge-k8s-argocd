@@ -23,6 +23,6 @@ spec:
       source:
         repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
         path: workload
-        targetRevision: main
+        targetRevision: test1
       destination:
         server: '{{server}}'
