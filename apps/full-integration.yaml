@@ -152,7 +152,7 @@ spec:
                 cilium:
                   ingressController: true
                   l2Announcements: true
-                  l7LoadBalancer: false
+                  l7LoadBalancer: true
                 ccm:
                   image:
                     repository: harbor.infrastructure.dachlab.net/nutanix-dev/nutanix-cloud-controller-manager
