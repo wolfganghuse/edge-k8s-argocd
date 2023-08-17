@@ -20,7 +20,7 @@ spec:
     metadata:
       name: '{{.name}}-per-cluster-settings'
       annotations:
-        argocd.argoproj.io/sync-wave: "1"
+        argocd.argoproj.io/sync-wave: "2"
       labels: 
         cd-component: flow
         environment: '{{.name}}'

@@ -20,7 +20,7 @@ spec:
     metadata:
       name: '{{.name}}'
       annotations:
-        argocd.argoproj.io/sync-wave: "2"
+        argocd.argoproj.io/sync-wave: "3"
       labels: 
         cd-component: capx-cluster
         environment: '{{.name}}'
