@@ -165,12 +165,12 @@ key:
       cluster: cluster2
       prismcentral: littlelab1
       subnet: vlan.145-cluster2
-    # - name: littlelab1-26
-    #   version: v1.27.4
-    #   controlplane_ip: 10.50.29.16
-    #   cluster: cluster2
-    #   prismcentral: littlelab1
-    #   subnet: vlan.145-cluster2
+    - name: littlelab1-26
+      version: v1.27.4
+      controlplane_ip: 10.50.29.16
+      cluster: cluster2
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster2
     - name: littlelab1-27
       version: v1.27.4
       controlplane_ip: 10.50.29.17
