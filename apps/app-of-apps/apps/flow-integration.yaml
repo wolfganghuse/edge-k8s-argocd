@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: infrastructure-integration
+  name: per-cluster-settings
   namespace: argocd
 spec:
   goTemplate: true
@@ -12,15 +12,17 @@ spec:
           repoURL: https://github.com/wolfganghuse/edge-k8s-argocd.git
           revision: test1
           files:
-          - path: mgmt/prismcentral.yaml
+          - path: mgmt/edge-k8s-clusters.yaml
       - list:
           elements: []
-          elementsYaml: "{{ .key.prismcentral | toJson }}"
+          elementsYaml: "{{ .key.clusters | toJson }}"
   template:
     metadata:
-      name: '{{.name}}-infrastructure-integration'
+      annotations:
+        argocd.argoproj.io/sync-wave: "2"
+      name: '{{.name}}-per-cluster-settings'
       labels: 
-        cd-component: infrastructure
+        cd-component: flow
         environment: '{{.name}}'
     spec:
       syncPolicy:
@@ -35,8 +37,8 @@ spec:
         namespace: '{{.name}}'
         server: 'https://kubernetes.default.svc'
       source:
-        path: 'common-helm-charts/crossplane-infrastructure/images'
         repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
+        path: 'common-helm-charts/crossplane-infrastructure/flow'
         targetRevision: 'test1'
         plugin:
           name: argocd-vault-plugin-helm
@@ -45,6 +47,7 @@ spec:
               value: |
                 cluster:
                   name: "{{.name}}"
+                  prismcentral: "{{.prismcentral}}"
                   user: <path:secret/data/prismcentral/{{.name}}#user>
                   pass: <path:secret/data/prismcentral/{{.name}}#pass>
                   endpoint: <path:secret/data/prismcentral/{{.name}}#endpoint>

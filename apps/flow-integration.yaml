@@ -19,8 +19,6 @@ spec:
   template:
     metadata:
       name: '{{.name}}-per-cluster-settings'
-      annotations:
-        argocd.argoproj.io/sync-wave: "2"
       labels: 
         cd-component: flow
         environment: '{{.name}}'
@@ -40,9 +38,14 @@ spec:
         repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
         path: 'common-helm-charts/crossplane-infrastructure/flow'
         targetRevision: 'test1'
-        helm:
-          parameters:
-          - name: "cluster.name"
-            value: '{{.name}}'
-          - name: "cluster.prismcentral"
-            value: '{{.prismcentral}}'
+        plugin:
+          name: argocd-vault-plugin-helm
+          env:
+            - name: HELM_VALUES
+              value: |
+                cluster:
+                  name: "{{.name}}"
+                  prismcentral: "{{.prismcentral}}"
+                  user: <path:secret/data/prismcentral/{{.name}}#user>
+                  pass: <path:secret/data/prismcentral/{{.name}}#pass>
+                  endpoint: <path:secret/data/prismcentral/{{.name}}#endpoint>

@@ -1,3 +1,6 @@
 cluster:
   name: cluster1
   prismcentral:
+  user: 
+  pass:
+  endpoint:

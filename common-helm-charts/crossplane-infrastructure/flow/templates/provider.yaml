@@ -1,9 +1,7 @@
 apiVersion: tf.upbound.io/v1beta1
 kind: ProviderConfig
 metadata:
-  name: {{ .Values.cluster.name }}-providerconfig
-  annotations:
-    argocd.argoproj.io/sync-wave: "1"
+  name: {{ .Values.cluster.name }}-flow-providerconfig
 spec:
   configuration: |
       terraform {

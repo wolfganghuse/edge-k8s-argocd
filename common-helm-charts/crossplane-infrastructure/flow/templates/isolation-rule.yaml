@@ -69,7 +69,7 @@ spec:
           }
       }
   providerConfigRef:
-    name: {{ .Values.cluster.prismcentral }}-providerconfig
+    name: {{ .Values.cluster.name }}-flow-providerconfig
   writeConnectionSecretToRef:
-    namespace:  {{ .Values.cluster.prismcentral }}
+    namespace:  {{ .Values.cluster.name }}
     name: connection-nutanix-flow-{{ .Values.cluster.name }}

@@ -18,6 +18,8 @@ spec:
           elementsYaml: "{{ .key.prismcentral | toJson }}"
   template:
     metadata:
+      annotations:
+        argocd.argoproj.io/sync-wave: "1"
       name: '{{.name}}-infrastructure-integration'
       labels: 
         cd-component: infrastructure
