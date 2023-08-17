@@ -3,8 +3,6 @@ kind: Workspace
 metadata:
   name: workspace-{{ .Values.cluster.name }}-images
   annotations:
-    argocd.argoproj.io/sync-wave: "2"
-  annotations:
     meta.upbound.io/example-id: tf/v1beta1/workspace
 spec:
   forProvider:
