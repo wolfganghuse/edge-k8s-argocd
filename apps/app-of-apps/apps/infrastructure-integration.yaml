@@ -3,6 +3,8 @@ kind: ApplicationSet
 metadata:
   name: infrastructure-integration
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   goTemplate: true
   generators:
@@ -19,7 +21,7 @@ spec:
   template:
     metadata:
       annotations:
-        argocd.argoproj.io/sync-wave: "1"
+        argocd.argoproj.io/sync-wave: "2"
       name: '{{.name}}-infrastructure-integration'
       labels: 
         cd-component: infrastructure
