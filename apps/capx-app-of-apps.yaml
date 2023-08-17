@@ -34,17 +34,12 @@ spec:
         path: apps/app-of-apps/apps
         repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
         targetRevision: test1
-        plugin:
-          name: argocd-vault-plugin-helm
-          env:
-            - name: HELM_VALUES
-              value: |
-                cluster:
-                  name: "{{.name}}"
-                  prismcentral: "{{.prismcentral}}"
-                  user: <path:secret/data/prismcentral/{{.prismcentral}}#user>
-                  pass: <path:secret/data/prismcentral/{{.prismcentral}}#pass>
-                  endpoint: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
+        helm:
+          parameters:
+          - name: "cluster.name"
+            value: '{{.name}}'
+          - name: "cluster.prismcentral"
+            value: '{{.prismcentral}}'
       destination:
         namespace: argocd
         server: 'https://kubernetes.default.svc'
