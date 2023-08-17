@@ -1,31 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
-kind: ApplicationSet
+kind: Application
 metadata:
-  name: per-cluster-settings
-  namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-wave: "2"
+  labels:
+    cd-component: flow
+    environment: '{{.name}}'
+  name: '{{.name}}-per-cluster-settings'
+  namespace: argocd
 spec:
-  goTemplate: true
-  generators:
-  - matrix:
-      generators:
-      - git:
-          repoURL: https://github.com/wolfganghuse/edge-k8s-argocd.git
-          revision: test1
-          files:
-          - path: mgmt/edge-k8s-clusters.yaml
-      - list:
-          elements: []
-          elementsYaml: "{{ .key.clusters | toJson }}"
-  template:
-    metadata:
-      annotations:
-        argocd.argoproj.io/sync-wave: "4"
-      name: '{{.name}}-per-cluster-settings'
-      labels: 
-        cd-component: flow
-        environment: '{{.name}}'
+  destination:
     spec:
       syncPolicy:
         automated:
