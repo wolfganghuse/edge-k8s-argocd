@@ -4,5 +4,3 @@ key:
       subnet: vlan.145-cluster1
     # - name: littlelab2
     #   subnet: vlan.145-cluster3
-    - name: crimson-pc
-      subnet: phx-routed-55-IPAM
