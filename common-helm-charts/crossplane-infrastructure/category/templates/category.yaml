@@ -5,6 +5,7 @@ metadata:
   namespace: {{ .Values.cluster.name }}
   annotations:
     meta.upbound.io/example-id: tf/v1beta1/workspace
+    argocd.argoproj.io/sync-wave: "-5"
 spec:
   forProvider:
     source: Inline
@@ -47,7 +48,7 @@ spec:
       }   
 
   providerConfigRef:
-    name: {{ .Values.cluster.name }}-category-providerconfig
+    name: {{ .Values.cluster.name }}-providerconfig
   writeConnectionSecretToRef:
     namespace:  {{ .Values.cluster.name }}
     name: connection-{{ .Values.cluster.name }}-category

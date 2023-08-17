@@ -4,6 +4,7 @@ metadata:
   name: {{ .Values.cluster.name }}-flow
   namespace: {{ .Values.cluster.name }}
   annotations:
+    argocd.argoproj.io/sync-wave: "-2"
     meta.upbound.io/example-id: tf/v1beta1/workspace
 spec:
   forProvider:
@@ -69,7 +70,7 @@ spec:
           }
       }
   providerConfigRef:
-    name: {{ .Values.cluster.name }}-flow-providerconfig
+    name: {{ .Values.cluster.name }}-providerconfig
   writeConnectionSecretToRef:
     namespace:  {{ .Values.cluster.name }}
     name: connection-{{ .Values.cluster.name }}-flow

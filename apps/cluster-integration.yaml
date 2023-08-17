@@ -36,7 +36,7 @@ spec:
         server: 'https://kubernetes.default.svc'
       sources:
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
-        path: 'common-helm-charts/crossplane-infrastructure/flow'
+        path: 'common-helm-charts/crossplane-infrastructure/provider'
         targetRevision: 'test1'
         plugin:
           name: argocd-vault-plugin-helm
@@ -51,6 +51,20 @@ spec:
                   endpoint: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
         path: 'common-helm-charts/crossplane-infrastructure/category'
+        targetRevision: 'test1'
+        plugin:
+          name: argocd-vault-plugin-helm
+          env:
+            - name: HELM_VALUES
+              value: |
+                cluster:
+                  name: "{{.name}}"
+                  prismcentral: "{{.prismcentral}}"
+                  user: <path:secret/data/prismcentral/{{.prismcentral}}#user>
+                  pass: <path:secret/data/prismcentral/{{.prismcentral}}#pass>
+                  endpoint: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
+      - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
+        path: 'common-helm-charts/crossplane-infrastructure/flow'
         targetRevision: 'test1'
         plugin:
           name: argocd-vault-plugin-helm
