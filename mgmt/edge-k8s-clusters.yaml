@@ -6,12 +6,12 @@ key:
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1
-    - name: littlelab1-stage
-      version: v1.27.4
-      controlplane_ip: 10.50.28.242
-      cluster: cluster2
-      prismcentral: littlelab1
-      subnet: vlan.145-cluster2
+    # - name: littlelab1-stage
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.28.242
+    #   cluster: cluster2
+    #   prismcentral: littlelab1
+    #   subnet: vlan.145-cluster2
 
 
     
