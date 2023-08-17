@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: per-cluster-settings
+  name: capx-applicationset
   namespace: argocd
 spec:
   goTemplate: true
@@ -18,9 +18,9 @@ spec:
           elementsYaml: "{{ .key.clusters | toJson }}"
   template:
     metadata:
-      name: '{{.name}}-flow'
+      name: '{{.name}}'
       labels: 
-        cd-component: flow
+        cd-component: capx
         environment: '{{.name}}'
     spec:
       syncPolicy:
