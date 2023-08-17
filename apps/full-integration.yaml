@@ -149,6 +149,9 @@ spec:
                   override_path: true                  
                 csi:
                   storageContainer: k8s
+                cilium:
+                  ingressController: true
+                  l2Announcements: true
                 ccm:
                   image:
                     repository: harbor.infrastructure.dachlab.net/nutanix-dev/nutanix-cloud-controller-manager
