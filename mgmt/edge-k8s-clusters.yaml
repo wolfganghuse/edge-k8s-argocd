@@ -130,10 +130,10 @@ key:
       subnet: vlan.145-cluster1
     - name: littlelab1-20
       version: v1.26.7
-    #   controlplane_ip: 10.50.28.30
-    #   cluster: cluster1
-    #   prismcentral: littlelab1
-    #   subnet: vlan.145-cluster1
+      controlplane_ip: 10.50.28.30
+      cluster: cluster1
+      prismcentral: littlelab1
+      subnet: vlan.145-cluster1
 
     # - name: littlelab1-21
     #   version: v1.26.7
