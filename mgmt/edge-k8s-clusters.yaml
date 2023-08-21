@@ -259,110 +259,110 @@ key:
 
 
     # - name: littlelab2-11
-      version: v1.27.4
-      controlplane_ip: 10.50.29.41
-      cluster: cluster3
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster3
-    - name: littlelab2-12
-      version: v1.27.4
-      controlplane_ip: 10.50.29.42
-      cluster: cluster3
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster3
-    - name: littlelab2-13
-      version: v1.27.4
-      controlplane_ip: 10.50.29.43
-      cluster: cluster3
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster3
-    - name: littlelab2-14
-      version: v1.27.4
-      controlplane_ip: 10.50.29.44
-      cluster: cluster3
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster3
-    - name: littlelab2-15
-      version: v1.27.4
-      controlplane_ip: 10.50.29.45
-      cluster: cluster3
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster3
-    - name: littlelab2-16
-      version: v1.27.4
-      controlplane_ip: 10.50.29.46
-      cluster: cluster3
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster3
-    - name: littlelab2-17
-      version: v1.27.4
-      controlplane_ip: 10.50.29.47
-      cluster: cluster3
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster3
-    - name: littlelab2-18
-      version: v1.27.4
-      controlplane_ip: 10.50.29.48
-      cluster: cluster3
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster3
-    - name: littlelab2-19
-      version: v1.27.4
-      controlplane_ip: 10.50.29.49
-      cluster: cluster3
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster3
-    - name: littlelab2-1
-      version: v1.27.4
-      controlplane_ip: 10.50.29.201
-      cluster: cluster4
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster4
-    - name: littlelab2-2
-      version: v1.27.4
-      controlplane_ip: 10.50.29.202
-      cluster: cluster4
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster4
-    - name: littlelab2-3
-      version: v1.27.4
-      controlplane_ip: 10.50.29.203
-      cluster: cluster4
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster4
-    - name: littlelab2-4
-      version: v1.27.4
-      controlplane_ip: 10.50.29.204
-      cluster: cluster4
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster4
-    - name: littlelab2-5
-      version: v1.27.4
-      controlplane_ip: 10.50.29.205
-      cluster: cluster4
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster4
-    - name: littlelab2-6
-      version: v1.27.4
-      controlplane_ip: 10.50.29.206
-      cluster: cluster4
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster4
-    - name: littlelab2-7
-      version: v1.27.4
-      controlplane_ip: 10.50.29.207
-      cluster: cluster4
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster4
-    - name: littlelab2-8
-      version: v1.27.4
-      controlplane_ip: 10.50.29.208
-      cluster: cluster4
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster4
-    - name: littlelab2-9
-      version: v1.27.4
-      controlplane_ip: 10.50.29.209
-      cluster: cluster4
-      prismcentral: littlelab2
-      subnet: vlan.145-cluster4
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.41
+    #   cluster: cluster3
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster3
+    # - name: littlelab2-12
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.42
+    #   cluster: cluster3
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster3
+    # - name: littlelab2-13
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.43
+    #   cluster: cluster3
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster3
+    # - name: littlelab2-14
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.44
+    #   cluster: cluster3
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster3
+    # - name: littlelab2-15
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.45
+    #   cluster: cluster3
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster3
+    # - name: littlelab2-16
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.46
+    #   cluster: cluster3
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster3
+    # - name: littlelab2-17
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.47
+    #   cluster: cluster3
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster3
+    # - name: littlelab2-18
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.48
+    #   cluster: cluster3
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster3
+    # - name: littlelab2-19
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.49
+    #   cluster: cluster3
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster3
+    # - name: littlelab2-1
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.201
+    #   cluster: cluster4
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster4
+    # - name: littlelab2-2
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.202
+    #   cluster: cluster4
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster4
+    # - name: littlelab2-3
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.203
+    #   cluster: cluster4
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster4
+    # - name: littlelab2-4
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.204
+    #   cluster: cluster4
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster4
+    # - name: littlelab2-5
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.205
+    #   cluster: cluster4
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster4
+    # - name: littlelab2-6
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.206
+    #   cluster: cluster4
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster4
+    # - name: littlelab2-7
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.207
+    #   cluster: cluster4
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster4
+    # - name: littlelab2-8
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.208
+    #   cluster: cluster4
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster4
+    # - name: littlelab2-9
+    #   version: v1.27.4
+    #   controlplane_ip: 10.50.29.209
+    #   cluster: cluster4
+    #   prismcentral: littlelab2
+    #   subnet: vlan.145-cluster4
