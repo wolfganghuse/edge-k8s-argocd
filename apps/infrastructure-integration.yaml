@@ -59,6 +59,6 @@ spec:
               value: |
                 cluster:
                   name: "{{.name}}"
-                  user: <path:secret/data/prismcentral/{{.name}}#user>
-                  pass: <path:secret/data/prismcentral/{{.name}}#pass>
-                  endpoint: <path:secret/data/prismcentral/{{.name}}#endpoint>
+                  user: <path:secret/data/prismcentral/{{.prismcentral}}#user>
+                  pass: <path:secret/data/prismcentral/{{.prismcentral}}#pass>
+                  endpoint: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
