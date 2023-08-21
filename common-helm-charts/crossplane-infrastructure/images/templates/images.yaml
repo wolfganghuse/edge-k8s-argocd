@@ -10,8 +10,8 @@ spec:
     source: Inline
     module: |
 
-      {{- range $v := .Values.images }}
-      resource "nutanix_image" "{{ $v.name }}" {
+      {{- range $i, $v := .Values.images }}
+      resource "nutanix_image" "source-image-{{ $i }}" {
 
         provider = nutanix
 
