@@ -4,6 +4,7 @@ metadata:
   name: workspace-{{ .Values.cluster.name }}-images
   annotations:
     meta.upbound.io/example-id: tf/v1beta1/workspace
+    argocd.argoproj.io/sync-wave: "-8"
 spec:
   forProvider:
     source: Inline
@@ -38,7 +39,7 @@ spec:
       }
       
   providerConfigRef:
-    name: {{ .Values.cluster.name }}-providerconfig
+    name: {{ .Values.cluster.prismcentral }}-providerconfig
   writeConnectionSecretToRef:
-    namespace:  {{ .Values.cluster.name }}
+    namespace:  {{ .Values.cluster.prismcentral }}
     name: connection-{{ .Values.cluster.name }}-images
