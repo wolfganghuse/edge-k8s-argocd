@@ -39,4 +39,4 @@ spec:
               value: "true"
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
         path: remote-capx
-        targetRevision: test1
+        targetRevision: main

@@ -10,7 +10,7 @@ spec:
       generators:
       - git:
           repoURL: https://github.com/wolfganghuse/edge-k8s-argocd.git
-          revision: test1
+          revision: main
           files:
           - path: mgmt/edge-k8s-clusters.yaml
       - list:
@@ -37,7 +37,7 @@ spec:
       sources:
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
         path: 'common-helm-charts/crossplane-infrastructure/provider'
-        targetRevision: 'test1'
+        targetRevision: 'main'
         plugin:
           name: argocd-vault-plugin-helm
           env:
@@ -65,7 +65,7 @@ spec:
                   endpoint: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
         path: 'common-helm-charts/crossplane-infrastructure/flow'
-        targetRevision: 'test1'
+        targetRevision: 'main'
         plugin:
           name: argocd-vault-plugin-helm
           env:
