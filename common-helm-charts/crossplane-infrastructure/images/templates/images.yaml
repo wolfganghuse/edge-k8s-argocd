@@ -4,41 +4,24 @@ metadata:
   name: workspace-{{ .Values.cluster.name }}-images
   annotations:
     meta.upbound.io/example-id: tf/v1beta1/workspace
+    argocd.argoproj.io/sync-wave: "-8"
 spec:
   forProvider:
     source: Inline
     module: |
-      resource "nutanix_image" "source_image_1_28" {
+
+      {{- range $i, $v := .Values.images }}
+      resource "nutanix_image" "source-image-{{ $i }}" {
 
         provider = nutanix
 
-        source_uri = "https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.28.0.qcow2"
-        name = "ubuntu-2204-kube-v1.28.0"
+        source_uri = "{{ $v.url }}"
+        name = "{{ $v.name }}"
       }
-      resource "nutanix_image" "source_image" {
-
-        provider = nutanix
-
-        source_uri = "https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.27.4.qcow2"
-        name = "ubuntu-2204-kube-v1.27.4"
-      }
-      resource "nutanix_image" "source_image_1_26" {
-
-        provider = nutanix
-
-        source_uri = "https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.26.7.qcow2"
-        name = "ubuntu-2204-kube-v1.26.7"
-      }
-      resource "nutanix_image" "source_image_1_25" {
-
-        provider = nutanix
-
-        source_uri = "https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.25.12.qcow2"
-        name = "ubuntu-2204-kube-v1.25.12"
-      }
+      {{- end }}
       
   providerConfigRef:
-    name: {{ .Values.cluster.name }}-providerconfig
+    name: {{ .Values.cluster.prismcentral }}-providerconfig
   writeConnectionSecretToRef:
-    namespace:  {{ .Values.cluster.name }}
+    namespace:  {{ .Values.cluster.prismcentral }}
     name: connection-{{ .Values.cluster.name }}-images

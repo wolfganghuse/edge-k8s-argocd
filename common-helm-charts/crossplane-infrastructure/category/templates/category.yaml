@@ -31,7 +31,7 @@ spec:
       }
 
   providerConfigRef:
-    name: {{ .Values.cluster.name }}-providerconfig
+    name: {{ .Values.cluster.prismcentral }}-providerconfig
   writeConnectionSecretToRef:
     namespace:  {{ .Values.cluster.name }}
     name: connection-{{ .Values.cluster.name }}-category

@@ -1,5 +1,9 @@
 cluster:
   name: cluster1
+  prismcentral:
   user: 
   pass:
   endpoint:
+images:
+- name: image1
+  url: abc
