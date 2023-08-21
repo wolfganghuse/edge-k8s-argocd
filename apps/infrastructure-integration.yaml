@@ -58,7 +58,7 @@ spec:
             - name: HELM_VALUES
               value: |
                 cluster:
-                  name: "{{.name}}"
+                  prismcentral: "{{.name}}"
                   user: <path:secret/data/prismcentral/{{.name}}#user>
                   pass: <path:secret/data/prismcentral/{{.name}}#pass>
                   endpoint: <path:secret/data/prismcentral/{{.name}}#endpoint>
