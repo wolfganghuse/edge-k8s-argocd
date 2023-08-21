@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: capx-applicationset
+  name: fullintegration-applicationset
   namespace: argocd
 spec:
   goTemplate: true
@@ -18,7 +18,7 @@ spec:
           elementsYaml: "{{ .key.clusters | toJson }}"
   template:
     metadata:
-      name: '{{.name}}'
+      name: '{{.name}}-fullintegration'
       labels: 
         cd-component: capx
         environment: '{{.name}}'
