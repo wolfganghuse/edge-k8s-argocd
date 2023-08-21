@@ -23,13 +23,13 @@ spec:
         source_uri = "https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.27.4.qcow2"
         name = "ubuntu-2204-kube-v1.27.4"
       }
-      # resource "nutanix_image" "source_image_1_26" {
+      resource "nutanix_image" "source_image_1_26" {
 
-      #   provider = nutanix
+        provider = nutanix
 
-      #   source_uri = "https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.26.7.qcow2"
-      #   name = "ubuntu-2204-kube-v1.26.7"
-      # }
+        source_uri = "https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.26.7.qcow2"
+        name = "ubuntu-2204-kube-v1.26.7"
+      }
       # resource "nutanix_image" "source_image_1_25" {
 
       #   provider = nutanix
