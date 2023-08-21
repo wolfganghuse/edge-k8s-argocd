@@ -4,3 +4,6 @@ cluster:
   user: 
   pass:
   endpoint:
+images:
+- name: image1
+  url: abc
