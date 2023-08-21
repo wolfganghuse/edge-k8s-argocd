@@ -37,7 +37,7 @@ spec:
       sources:
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
         path: 'common-helm-charts/crossplane-infrastructure/provider'
-        targetRevision: 'main'
+        targetRevision: 'crossplane-update'
         plugin:
           name: argocd-vault-plugin-helm
           env:
@@ -51,7 +51,7 @@ spec:
                   endpoint: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
         path: 'common-helm-charts/crossplane-infrastructure/images'
-        targetRevision: 'main'
+        targetRevision: 'crossplane-update'
         plugin:
           name: argocd-vault-plugin-helm
           env:
