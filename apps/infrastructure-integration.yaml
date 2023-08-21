@@ -63,7 +63,11 @@ spec:
                   pass: <path:secret/data/prismcentral/{{.name}}#pass>
                   endpoint: <path:secret/data/prismcentral/{{.name}}#endpoint>
                 images:
+                - name: ubuntu-2204-kube-v1.28.0
+                  url: https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.28.0.qcow2
                 - name: ubuntu-2204-kube-v1.27.4
                   url: https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.27.4.qcow2
                 - name: ubuntu-2204-kube-v1.26.7
                   url: https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.26.7.qcow2
+                - name: ubuntu-2204-kube-v1.25.12
+                  url: https://capx-img.s3.eu-west-3.amazonaws.com/ubuntu-2204-kube-v1.25.12.qcow2
