@@ -1,0 +1,40 @@
+apiVersion: tf.upbound.io/v1beta1
+kind: Workspace
+metadata:
+  name: {{ .Values.cluster.name }}-flow
+  namespace: {{ .Values.cluster.name }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "-2"
+    meta.upbound.io/example-id: tf/v1beta1/workspace
+spec:
+  forProvider:
+    source: Inline
+    module: |
+      data "nutanix_clusters" "clusters" {}
+
+      //Create Security Policy
+      resource "nutanix_network_security_rule" "{{ .Values.cluster.name }}-isolation" {
+          name        = "{{ .Values.cluster.name }}-isolation-rule"
+          description = "{{ .Values.cluster.name }}-isolation-rule"
+
+          isolation_rule_action = "MONITOR"
+
+          isolation_rule_first_entity_filter_kind_list = ["vm"]
+          isolation_rule_first_entity_filter_type      = "CATEGORIES_MATCH_ALL"
+          isolation_rule_first_entity_filter_params {
+              name   = "Environment"
+              values = ["{{ .Values.cluster.name }}"]
+          }
+
+          isolation_rule_second_entity_filter_kind_list = ["vm"]
+          isolation_rule_second_entity_filter_type      = "CATEGORIES_MATCH_ALL"
+          isolation_rule_second_entity_filter_params {
+              name   = "Environment"
+              values = ["Production"]
+          }
+      }
+  providerConfigRef:
+    name: {{ .Values.cluster.name }}-providerconfig
+  writeConnectionSecretToRef:
+    namespace:  {{ .Values.cluster.name }}
+    name: connection-{{ .Values.cluster.name }}-flow

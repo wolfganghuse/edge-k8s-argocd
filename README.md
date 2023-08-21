@@ -172,5 +172,10 @@ Install Terraform Provider for Crossplane
 kubectl apply -f scripts/crossplane.yaml
 ```
 
+# Dashboard
 
+helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard
+helm repo update
+helm install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard -f scripts/dashboard-values.yaml
 
+kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d
