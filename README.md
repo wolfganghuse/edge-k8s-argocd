@@ -1,1 +1,1 @@
-This branch is for 10 cluster lab setup with 1.27
+This branch is for demo cluster lab setup with 1.26.7
