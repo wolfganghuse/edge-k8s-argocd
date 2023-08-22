@@ -10,7 +10,7 @@ spec:
       generators:
       - git:
           repoURL: https://github.com/wolfganghuse/edge-k8s-argocd.git
-          revision: crimson-small-1.26
+          revision: main
           files:
           - path: mgmt/prismcentral.yaml
       - list:
