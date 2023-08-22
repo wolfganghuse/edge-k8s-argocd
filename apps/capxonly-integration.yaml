@@ -10,7 +10,7 @@ spec:
       generators:
       - git:
           repoURL: https://github.com/wolfganghuse/edge-k8s-argocd.git
-          revision: crimson-large-1.26
+          revision: littlelab1-large-1.26
           files:
           - path: mgmt/edge-k8s-clusters.yaml
       - list:
@@ -46,7 +46,7 @@ spec:
                 cluster:
                   kubernetesVersion: "{{.version}}"
                 prismCentral:
-                  inject: true
+                  inject: false
                   address: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
                   username: <path:secret/data/prismcentral/{{.prismcentral}}#user>
                   password: <path:secret/data/prismcentral/{{.prismcentral}}#pass>
@@ -57,9 +57,9 @@ spec:
                 controlPlaneEndpoint:
                   host: '{{.controlplane_ip}}'
                 controlplane:
-                  replicas: 1
+                  replicas: 3
                 nodes:
-                  replicas: 1
+                  replicas: 2
                 users:
                   enabled: true
                   name: capiuser
