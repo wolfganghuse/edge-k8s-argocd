@@ -1,6 +1,6 @@
 key:
   prismcentral:
-    - name: littlelab1
-      subnet: vlan.145-cluster1
+    - name: crimson-pc
+      subnet: phx-routed-55-IPAM
     # - name: littlelab2
     #   subnet: vlan.145-cluster3
