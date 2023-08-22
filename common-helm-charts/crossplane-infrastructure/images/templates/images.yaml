@@ -1,7 +1,7 @@
 apiVersion: tf.upbound.io/v1beta1
 kind: Workspace
 metadata:
-  name: workspace-{{ .Values.cluster.name }}-images
+  name: workspace-{{ .Values.cluster.prismcentral }}-images
   annotations:
     meta.upbound.io/example-id: tf/v1beta1/workspace
     argocd.argoproj.io/sync-wave: "-8"
@@ -24,4 +24,4 @@ spec:
     name: {{ .Values.cluster.prismcentral }}-providerconfig
   writeConnectionSecretToRef:
     namespace:  {{ .Values.cluster.prismcentral }}
-    name: connection-{{ .Values.cluster.name }}-images
+    name: connection-{{ .Values.cluster.prismcentral }}-images
