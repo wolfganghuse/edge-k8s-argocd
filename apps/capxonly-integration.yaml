@@ -10,7 +10,7 @@ spec:
       generators:
       - git:
           repoURL: https://github.com/wolfganghuse/edge-k8s-argocd.git
-          revision: littlelab1-large-1.27
+          revision: crimson-small-1.26
           files:
           - path: mgmt/edge-k8s-clusters.yaml
       - list:
@@ -46,7 +46,7 @@ spec:
                 cluster:
                   kubernetesVersion: "{{.version}}"
                 prismCentral:
-                  inject: false
+                  inject: true
                   address: <path:secret/data/prismcentral/{{.prismcentral}}#endpoint>
                   username: <path:secret/data/prismcentral/{{.prismcentral}}#user>
                   password: <path:secret/data/prismcentral/{{.prismcentral}}#pass>
