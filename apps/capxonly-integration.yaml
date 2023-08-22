@@ -10,7 +10,7 @@ spec:
       generators:
       - git:
           repoURL: https://github.com/wolfganghuse/edge-k8s-argocd.git
-          revision: littlelab1-large-1.26
+          revision: littlelab1-large-1.27
           files:
           - path: mgmt/edge-k8s-clusters.yaml
       - list:
