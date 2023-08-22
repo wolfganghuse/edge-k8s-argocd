@@ -4,50 +4,60 @@ key:
       version: v1.26.7
       cluster: crimson
       prismcentral: crimson-pc
+      subnet: phx-routed-55-IPAM
       controlplane_ip: 10.48.38.31
     - name: crimson-dev02
       version: v1.26.7
       cluster: crimson
+      subnet: phx-routed-55-IPAM
       prismcentral: crimson-pc
       controlplane_ip: 10.48.38.32
     - name: crimson-dev03
       version: v1.26.7
       cluster: crimson
+      subnet: phx-routed-55-IPAM
       prismcentral: crimson-pc
       controlplane_ip: 10.48.38.33
     - name: crimson-dev04
       version: v1.26.7
       cluster: crimson
+      subnet: phx-routed-55-IPAM
       prismcentral: crimson-pc
       controlplane_ip: 10.48.38.34
     - name: crimson-dev05
       version: v1.26.7
       cluster: crimson
+      subnet: phx-routed-55-IPAM
       prismcentral: crimson-pc
       controlplane_ip: 10.48.38.35
     - name: crimson-dev06
       version: v1.26.7
       cluster: crimson
+      subnet: phx-routed-55-IPAM
       prismcentral: crimson-pc
       controlplane_ip: 10.48.38.36
     - name: crimson-dev07
       version: v1.26.7
       cluster: crimson
+      subnet: phx-routed-55-IPAM
       prismcentral: crimson-pc
       controlplane_ip: 10.48.38.37
     - name: crimson-dev08
       version: v1.26.7
       cluster: crimson
+      subnet: phx-routed-55-IPAM
       prismcentral: crimson-pc
       controlplane_ip: 10.48.38.38
     - name: crimson-dev09
       version: v1.26.7
       cluster: crimson
+      subnet: phx-routed-55-IPAM
       prismcentral: crimson-pc
       controlplane_ip: 10.48.38.39
     - name: crimson-dev10
       version: v1.26.7
       cluster: crimson
+      subnet: phx-routed-55-IPAM
       prismcentral: crimson-pc
       controlplane_ip: 10.48.38.40
  
