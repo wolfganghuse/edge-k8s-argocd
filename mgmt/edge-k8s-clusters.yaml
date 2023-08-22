@@ -61,7 +61,7 @@ key:
       prismcentral: crimson-pc
       controlplane_ip: 10.48.38.40
  
-     - name: crimson-dev11
+    - name: crimson-dev11
       version: v1.26.7
       cluster: crimson
       prismcentral: crimson-pc
