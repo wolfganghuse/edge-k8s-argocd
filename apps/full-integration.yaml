@@ -32,7 +32,7 @@ spec:
       project: default
       destination:
         name: ''
-        namespace: '{{.name}}'
+        namespace: '{{.name}}-fullintegration'
         server: 'https://kubernetes.default.svc'
       sources:
       # - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd'
