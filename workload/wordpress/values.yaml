@@ -8,7 +8,8 @@ service:
   type: "ClusterIP" 
 persistence:
   storageClass: "nutanix-volume" 
-  accessModes: "ReadWriteOnce"
+  accessModes: 
+  - "ReadWriteOnce"
   # storageClass: "nutanix-dynamicfile" 
   # accessModes: {"ReadWriteMany"} 
 mariadb:
@@ -19,11 +20,13 @@ mariadb:
   primary:
     persistence:
       storageClass: "nutanix-volume" 
-      accessModes: {"ReadWriteOnce"} 
+      accessModes:
+      - "ReadWriteOnce"
   secondary:
     persistence:
       storageClass: "nutanix-volume" 
-      accessModes: {"ReadWriteOnce"} 
+      accessModes:
+      - "ReadWriteOnce" 
 containerSecurityContext:
   allowPrivilegeEscalation: true 
 serviceAccount:
