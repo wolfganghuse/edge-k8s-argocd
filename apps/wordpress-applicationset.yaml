@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: workload
+  namespace: argocd
+spec:
+  generators:
+  - clusters:
+      selector:
+        matchLabels:
+          argocd.argoproj.io/secret-type: cluster
+  template:
+    metadata:
+      name: '{{name}}-workload'
+      labels: 
+        cd-component: workload
+        environment: '{{name}}'
+    spec:
+      syncPolicy:
+        automated:
+          prune: true
+        syncOptions:
+          - CreateNamespace=true
+      project: default
+      destination:
+        server: '{{server}}'
+        namespace: 'wordpress'
+
+      sources:
+      - repoURL: https://charts.bitnami.com/bitnami
+        chart: wordpress
+        targetRevision: 6.3.0
+        helm:
+          valueFiles:
+          - $values/workload/wordpress/values.yaml
+          parameters:
+          - name: "wordpressBlogName"
+            value: 'Welcome to Nutanix Blog on {{.name}}'
+      - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
+        targetRevision: workload
+        ref: values

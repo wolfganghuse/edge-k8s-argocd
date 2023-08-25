@@ -22,7 +22,7 @@ spec:
       project: default
       source:
         repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
-        path: workload
+        path: workload/simple
         targetRevision: main
       destination:
         server: '{{server}}'
