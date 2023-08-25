@@ -148,7 +148,9 @@ spec:
                   mirror: harbor.infrastructure.dachlab.net/v2/gcr.io
                   override_path: true                  
                 csi:
-                  storageContainer: k8s
+                  enable_csi2: false
+                  enable_csi3: true
+                  storageContainer: SelfServiceContainer
                 ccm:
                   image:
                     repository: harbor.infrastructure.dachlab.net/nutanix-dev/nutanix-cloud-controller-manager
