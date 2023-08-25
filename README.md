@@ -179,3 +179,11 @@ helm repo update
 helm install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard -f scripts/dashboard-values.yaml
 
 kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d
+
+
+# Grafana
+
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+helm install grafana grafana/grafana --create-namespace --namespace grafana-system -f scripts/grafana-values.yaml
+kubectl get secret --namespace grafana-system grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
