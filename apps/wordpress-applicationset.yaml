@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: workload
+  name: wordpress
   namespace: argocd
 spec:
   generators:
@@ -11,9 +11,9 @@ spec:
           argocd.argoproj.io/secret-type: cluster
   template:
     metadata:
-      name: '{{name}}-workload'
+      name: '{{name}}-wordpress'
       labels: 
-        cd-component: workload
+        cd-component: wordpress
         environment: '{{name}}'
     spec:
       syncPolicy:
@@ -29,7 +29,7 @@ spec:
       sources:
       - repoURL: https://charts.bitnami.com/bitnami
         chart: wordpress
-        targetRevision: 6.3.0
+        targetRevision: 17.1.2
         helm:
           valueFiles:
           - $values/workload/wordpress/values.yaml
