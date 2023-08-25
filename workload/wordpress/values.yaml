@@ -1,0 +1,33 @@
+
+wordpressUsername: "admin" 
+wordpressPassword: "nutanix/4u" 
+wordpressBlogName: "Welcome to Nutanix on Openshift Demos" 
+replicaCount: "1" 
+# replicaCount: "2" 
+persistence:
+  storageClass: "nutanix-volume" 
+  accessModes: 
+  - "ReadWriteOnce"
+  # storageClass: "nutanix-dynamicfile" 
+  # accessModes:
+  # - "ReadWriteMany"
+mariadb:
+  architecture: "replication" 
+  auth:
+    rootPassword: "nutanix/4u" 
+    password: "nutanix/4u" 
+  primary:
+    persistence:
+      storageClass: "nutanix-volume" 
+      accessModes:
+      - "ReadWriteOnce"
+  secondary:
+    persistence:
+      storageClass: "nutanix-volume" 
+      accessModes:
+      - "ReadWriteOnce" 
+containerSecurityContext:
+  allowPrivilegeEscalation: true 
+serviceAccount:
+  create: "true" 
+  name: "wordpress-sa"
