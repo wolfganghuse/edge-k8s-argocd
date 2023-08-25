@@ -37,5 +37,5 @@ spec:
           - name: "wordpressBlogName"
             value: 'Welcome to Nutanix Blog on {{.name}}'
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
-        targetRevision: workload
+        targetRevision: main
         ref: values
