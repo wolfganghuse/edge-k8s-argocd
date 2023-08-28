@@ -1,91 +1,91 @@
 key:
   clusters:
     - name: littlelab1dev-01
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.6
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1
     - name: littlelab1dev-02
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.7
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1
     - name: littlelab1dev-03
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.8
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1
     - name: littlelab1dev-04
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.9
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1
     - name: littlelab1dev-05
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.10
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1
     - name: littlelab1dev-06
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.11
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1
     - name: littlelab1dev-07
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.12
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1
     - name: littlelab1dev-08
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.13
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1
     - name: littlelab1dev-09
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.14
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1    
     - name: littlelab1dev-10
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.15
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1
     - name: littlelab1dev-11
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.16
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1
     - name: littlelab1dev-12
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.17
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1
     - name: littlelab1dev-13
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.18
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1
     - name: littlelab1dev-14
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.19
       cluster: cluster1
       prismcentral: littlelab1
       subnet: vlan.145-cluster1
     - name: littlelab1dev-15
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.20
       cluster: cluster1
       prismcentral: littlelab1
@@ -94,91 +94,91 @@ key:
 
 
     - name: littlelab1dev-16
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.21
       cluster: cluster2
       prismcentral: littlelab1
       subnet: vlan.145-cluster2
     - name: littlelab1dev-17
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.22
       cluster: cluster2
       prismcentral: littlelab1
       subnet: vlan.145-cluster2
     - name: littlelab1dev-18
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.23
       cluster: cluster2
       prismcentral: littlelab1
       subnet: vlan.145-cluster2
     - name: littlelab1dev-19
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.24
       cluster: cluster2
       prismcentral: littlelab1
       subnet: vlan.145-cluster2
     - name: littlelab1dev-20
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.25
       cluster: cluster2
       prismcentral: littlelab1
       subnet: vlan.145-cluster2
     - name: littlelab1dev-21
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.26
       cluster: cluster2
       prismcentral: littlelab1
       subnet: vlan.145-cluster2
     - name: littlelab1dev-22
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.27
       cluster: cluster2
       prismcentral: littlelab1
       subnet: vlan.145-cluster2
     - name: littlelab1dev-23
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.28
       cluster: cluster2
       prismcentral: littlelab1
       subnet: vlan.145-cluster2
     - name: littlelab1dev-24
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.29
       cluster: cluster2
       prismcentral: littlelab1
       subnet: vlan.145-cluster2    
     - name: littlelab1dev-25
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.30
       cluster: cluster2
       prismcentral: littlelab1
       subnet: vlan.145-cluster2
     - name: littlelab1dev-26
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.31
       cluster: cluster2
       prismcentral: littlelab1
       subnet: vlan.145-cluster2
     - name: littlelab1dev-27
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.32
       cluster: cluster2
       prismcentral: littlelab1
       subnet: vlan.145-cluster2
     - name: littlelab1dev-28
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.33
       cluster: cluster2
       prismcentral: littlelab1
       subnet: vlan.145-cluster2
     - name: littlelab1dev-29
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.34
       cluster: cluster2
       prismcentral: littlelab1
       subnet: vlan.145-cluster2
     - name: littlelab1dev-30
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.28.35
       cluster: cluster2
       prismcentral: littlelab1
@@ -187,91 +187,91 @@ key:
 
 
     - name: littlelab1dev-31
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.6
       cluster: cluster3
       prismcentral: littlelab1
       subnet: vlan.145-cluster3
     - name: littlelab1dev-32
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.7
       cluster: cluster3
       prismcentral: littlelab1
       subnet: vlan.145-cluster3
     - name: littlelab1dev-33
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.8
       cluster: cluster3
       prismcentral: littlelab1
       subnet: vlan.145-cluster3
     - name: littlelab1dev-34
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.9
       cluster: cluster3
       prismcentral: littlelab1
       subnet: vlan.145-cluster3
     - name: littlelab1dev-35
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.10
       cluster: cluster3
       prismcentral: littlelab1
       subnet: vlan.145-cluster3
     - name: littlelab1dev-36
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.11
       cluster: cluster3
       prismcentral: littlelab1
       subnet: vlan.145-cluster3
     - name: littlelab1dev-37
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.12
       cluster: cluster3
       prismcentral: littlelab1
       subnet: vlan.145-cluster3
     - name: littlelab1dev-38
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.13
       cluster: cluster3
       prismcentral: littlelab1
       subnet: vlan.145-cluster3
     - name: littlelab1dev-39
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.14
       cluster: cluster3
       prismcentral: littlelab1
       subnet: vlan.145-cluster3    
     - name: littlelab1dev-40
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.15
       cluster: cluster3
       prismcentral: littlelab1
       subnet: vlan.145-cluster3
     - name: littlelab1dev-41
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.16
       cluster: cluster3
       prismcentral: littlelab1
       subnet: vlan.145-cluster3
     - name: littlelab1dev-42
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.17
       cluster: cluster3
       prismcentral: littlelab1
       subnet: vlan.145-cluster3
     - name: littlelab1dev-43
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.18
       cluster: cluster3
       prismcentral: littlelab1
       subnet: vlan.145-cluster3
     - name: littlelab1dev-44
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.19
       cluster: cluster3
       prismcentral: littlelab1
       subnet: vlan.145-cluster3
     - name: littlelab1dev-45
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.20
       cluster: cluster3
       prismcentral: littlelab1
@@ -280,91 +280,91 @@ key:
 
 
     - name: littlelab1dev-46
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.21
       cluster: cluster4
       prismcentral: littlelab1
       subnet: vlan.145-cluster4
     - name: littlelab1dev-47
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.22
       cluster: cluster4
       prismcentral: littlelab1
       subnet: vlan.145-cluster4
     - name: littlelab1dev-48
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.23
       cluster: cluster4
       prismcentral: littlelab1
       subnet: vlan.145-cluster4
     - name: littlelab1dev-49
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.24
       cluster: cluster4
       prismcentral: littlelab1
       subnet: vlan.145-cluster4
     - name: littlelab1dev-50
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.25
       cluster: cluster4
       prismcentral: littlelab1
       subnet: vlan.145-cluster4
     - name: littlelab1dev-51
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.26
       cluster: cluster4
       prismcentral: littlelab1
       subnet: vlan.145-cluster4
     - name: littlelab1dev-52
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.27
       cluster: cluster4
       prismcentral: littlelab1
       subnet: vlan.145-cluster4
     - name: littlelab1dev-53
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.28
       cluster: cluster4
       prismcentral: littlelab1
       subnet: vlan.145-cluster4
     - name: littlelab1dev-54
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.29
       cluster: cluster4
       prismcentral: littlelab1
       subnet: vlan.145-cluster4    
     - name: littlelab1dev-55
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.30
       cluster: cluster4
       prismcentral: littlelab1
       subnet: vlan.145-cluster4
     - name: littlelab1dev-56
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.31
       cluster: cluster4
       prismcentral: littlelab1
       subnet: vlan.145-cluster4
     - name: littlelab1dev-57
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.32
       cluster: cluster4
       prismcentral: littlelab1
       subnet: vlan.145-cluster4
     - name: littlelab1dev-58
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.33
       cluster: cluster4
       prismcentral: littlelab1
       subnet: vlan.145-cluster4
     - name: littlelab1dev-59
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.34
       cluster: cluster4
       prismcentral: littlelab1
       subnet: vlan.145-cluster4
     - name: littlelab1dev-60
-      version: v1.27.4
+      version: v1.27.5
       controlplane_ip: 10.50.29.35
       cluster: cluster4
       prismcentral: littlelab1
