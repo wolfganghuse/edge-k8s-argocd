@@ -18,7 +18,7 @@ spec:
           elementsYaml: "{{ .key.clusters | toJson }}"
   template:
     metadata:
-      name: '{{.name}}-capxonly'
+      name: '{{.name}}'
       labels: 
         cd-component: capx
         environment: '{{.name}}'
@@ -32,7 +32,7 @@ spec:
       project: default
       destination:
         name: ''
-        namespace: '{{.name}}-capxonly'
+        namespace: '{{.name}}'
         server: 'https://kubernetes.default.svc'
       sources:
       - repoURL: 'git@github.com:nutanix-cloud-native/nkex-cluster.git'
