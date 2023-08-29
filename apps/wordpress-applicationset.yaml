@@ -35,7 +35,7 @@ spec:
           - $values/workload/wordpress/values.yaml
           parameters:
           - name: "wordpressBlogName"
-            value: 'Welcome to Nutanix Blog on {{.name}}'
+            value: 'Welcome to Nutanix Blog on {{name}}'
       - repoURL: 'https://github.com/wolfganghuse/edge-k8s-argocd.git'
         targetRevision: main
         ref: values
