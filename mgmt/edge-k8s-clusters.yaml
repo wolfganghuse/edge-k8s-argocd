@@ -1,12 +1,12 @@
 # Adding items to this file will create CAPX-Cluster based on the configuration provided
 key:
   clusters:
-    - name: littlelab1-dev
-      version: v1.26.8
-      controlplane_ip: 10.50.28.6
-      cluster: cluster1
-      prismcentral: littlelab1
-      subnet: vlan.145-cluster1
+    # - name: littlelab1-dev
+    #   version: v1.26.8
+    #   controlplane_ip: 10.50.28.6
+    #   cluster: cluster1
+    #   prismcentral: littlelab1
+    #   subnet: vlan.145-cluster1
     - name: littlelab1-stage
       version: v1.26.8
       controlplane_ip: 10.50.28.7
