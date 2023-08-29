@@ -1,3 +1,9 @@
+# Listed PrismCentral Instances must be configured in Vault with Credentials and Enpoints.
+# Adding a PC to this list will do the following tasks:
+# - create crossplane provider config
+# - upload multiple Images needed by CAPX
+#
+# ToDo: also deploy a remote CAPX-Management Cluster for better scaling
 key:
   prismcentral:
     - name: littlelab1

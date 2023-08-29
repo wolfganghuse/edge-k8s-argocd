@@ -1,3 +1,4 @@
+# Adding items to this file will create CAPX-Cluster based on the configuration provided
 key:
   clusters:
     - name: littlelab1-dev
