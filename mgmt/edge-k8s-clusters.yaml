@@ -2,7 +2,7 @@ key:
   clusters:
     - name: kubeflow1
       version: v1.25.14
-      controlplane_ip: 10.50.73.16
+      controlplane_ip: 10.50.73.17
       cluster: blaze06
       prismcentral: blaze
       subnet: vlan.130
