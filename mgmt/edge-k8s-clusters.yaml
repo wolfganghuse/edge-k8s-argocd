@@ -1,6 +1,6 @@
 key:
   clusters:
-    - name: kubeflow1
+    - name: kubeflow-cluster2
       version: v1.25.14
       controlplane_ip: 10.50.73.17
       cluster: blaze06
